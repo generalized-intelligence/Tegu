@@ -1,3 +1,4 @@
+![Tegu Logo](https://s2.ax1x.com/2019/01/30/kl6rzF.jpg)
 # Tegu
 ## A Machine Learning Toolbox for Non-ML Programmer. 
 ## 为非机器学习工程师设计的机器学习工具
