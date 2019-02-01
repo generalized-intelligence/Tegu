@@ -29,6 +29,7 @@ python3 tegu.py
 For Image Recognition and Video Classification, we have developed a set of tools to process and clean up the datasets. You may use [Tegu Image Annotation](http://www.giai.tech) and [Tegu Video Annotation](http://www.giai.tech) to process your dataset.
 
 
+
 1. 首先请安装 [Python3](https://www.python.org) 以及 [pip3](https://pip.pypa.io/en/stable/installing)。
 2. 请安装 [CUDA](https://developer.nvidia.com/cuda-downloads) 和 [cuDNN](https://developer.nvidia.com/cudnn)。
 3. 如果需要使用人脸检测功能， 请编译安装 [OpenCV](https://opencv.org/), 并确保安装其 dnn 模块。
@@ -53,6 +54,7 @@ python3 tegu.py
 * Util/: Utility used in the project
 
 
+
 * GUI/: 项目的ui部分，使用 [PyQt5](https://www.riverbankcomputing.com/software/pyqt/download5) 编写。
 * Network/: 项目所用到的网络部分， 被外部 GUI 脚本引用。
 * hook/: 将项目打包成 Windows 的 .exe 可执行文件所用到的 hook 文件。
@@ -69,6 +71,7 @@ python3 tegu.py
 HTTP API is available for Image Recognition, Facial Recognition and License Plate Recognition
 
 
+
 * 视频分类（长视频分类）
 * 图像检测
 * 人脸识别（建立特征库，并识别人脸）
@@ -81,11 +84,13 @@ HTTP API is available for Image Recognition, Facial Recognition and License Plat
 See [说明文档](http://www.giai.tech)
 
 
+
 参见 [说明文档](http://www.giai.tech)
 
 ## Relevant Projects
 
 For Image Recognition and Video Classification, we have developed a set of tools to process and clean up the datasets. You may use [Tegu Image Annotation](http://www.giai.tech) and [Tegu Video Annotation](http://www.giai.tech) to process your dataset.
+
 
 
 对于图像检测和视频分类的数据处理及标注，我们提供了 [Tegu 图像标注软件](http://www.giai.tech)，和 [Tegu 视频标注软件](http://www.giai.tech) 。
@@ -110,6 +115,7 @@ For Image Recognition and Video Classification, we have developed a set of tools
 * Image Segmentation
 * General OCR
 * Video Tracking (Work-In-Progress)
+
 
 
 * 修改进程通信模块
