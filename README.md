@@ -84,7 +84,7 @@ HTTP API is available for Image Recognition, Facial Recognition and License Plat
 
 ## User Manual
 
-See [说明文档](http://www.giai.tech)
+See [User Manual](http://www.giai.tech)
 
 ---
 
