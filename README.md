@@ -21,7 +21,7 @@ Tegu 是一个为日常工作中需要用到机器学习的非专业机器学习
 
 1. Install [Python3](https://www.python.org) and [pip3](https://pip.pypa.io/en/stable/installing)
 2. Install [CUDA](https://developer.nvidia.com/cuda-downloads) and [cuDNN](https://developer.nvidia.com/cudnn)
-3. If you would like to use the Facial Recognition feature, please compile and install [OpenCV](https://opencv.org/). Please make sure the dnn module is installed.
+3. If you would like to use the Facial Recognition feature, please compile and install [OpenCV](https://opencv.org/). Please make sure the DNN module is installed.
 4. Use the following command to install requirements:
 
 ```sh
@@ -38,7 +38,7 @@ For Image Recognition and Video Classification, we have developed a set of tools
 
 1. 首先请安装 [Python3](https://www.python.org) 以及 [pip3](https://pip.pypa.io/en/stable/installing)。
 2. 请安装 [CUDA](https://developer.nvidia.com/cuda-downloads) 和 [cuDNN](https://developer.nvidia.com/cudnn)。
-3. 如果需要使用人脸检测功能， 请编译安装 [OpenCV](https://opencv.org/), 并确保安装其 dnn 模块。
+3. 如果需要使用人脸检测功能， 请编译安装 [OpenCV](https://opencv.org/), 并确保安装其 DNN 模块。
 4. 使用如下命令安装所需的 Python 框架:
 
 ```sh
@@ -87,11 +87,11 @@ HTTP API is available for Image Recognition, Facial Recognition and License Plat
 
 ## User Manual
 
-See [User Manual](http://www.giai.tech)
+See [User Manual(CN)](https://tegu.gitbook.io/tegucv-cn/)
 
 ---
 
-参见 [说明文档](http://www.giai.tech)
+参见 [说明文档](https://tegu.gitbook.io/tegucv-cn/)
 
 ## Relevant Projects
 
@@ -101,21 +101,19 @@ For Image Recognition and Video Classification, we have developed a set of tools
 
 对于图像检测和视频分类的数据处理及标注，我们提供了 [Tegu 图像标注软件](http://www.giai.tech)，和 [Tegu 视频标注软件](http://www.giai.tech) 。
 
-## Neural Networks Used
+## Used
 
 * [YOLOv3](https://github.com/qqwweee/keras-yolo3)
 * [SSD300](https://github.com/pierluigiferrari/ssd_keras)
 * [ActivityNet](https://github.com/imatge-upc/activitynet-2016-cvprw)
 * [MTCNN_face_detection](https://github.com/kpzhang93/MTCNN_face_detection_alignment)
 * [facenet](https://github.com/davidsandberg/facenet)
-* [HyperLPR](https://github.com/zeusees/HyperLPR)
 
 ## TODO
 
 * Optimization of interprocess communication
 * Adding common neural networks, such as passenger detection, vehicle detection, and cat/dog detection
 * Abnormality Detection in Restricted Zone (Training Free)
-* Chinese NLP
 * Hand Gesture Recognition, Pose Detection based on Feature Point Paring, Facial Feature Point Detection (Training Free)
 * Image Segmentation
 * General OCR
@@ -126,7 +124,6 @@ For Image Recognition and Video Classification, we have developed a set of tools
 * 修改进程通信模块
 * 建立行人，车辆，猫狗等常见检测模型
 * 禁入区等功能（免训练）
-* 中文语音识别
 * 手势识别，人体姿态特征点检测，人脸特征点检测（免训练）
 * 图像分割，要有相应的常见模型
 * 通用OCR。
