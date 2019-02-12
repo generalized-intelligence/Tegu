@@ -1,5 +1,8 @@
 ![Tegu Logo](https://s2.ax1x.com/2019/01/30/kl6rzF.jpg)
 # Tegu
+
+[![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## A Machine Learning Toolbox for Non-ML Programmer
 ## 为非机器学习工程师设计的机器学习工具
 
