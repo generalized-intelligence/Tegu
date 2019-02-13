@@ -74,7 +74,7 @@ HTTP API is available for Image Recognition, Facial Recognition and License Plat
 * 对标注文件(`*.serval`)进行加密和解密——开源版GIIA使用的加密秘钥位于`config/defaults.py`中，默认设置为`GIIA-py-opensource`
 * 将标注图像和标注文件打包成`*.zip`格式的压缩文件，便于上传——该功能依赖外部的`7z.exe`，位于`model/7zfiles`文件夹中
 
-其中图像检测，人脸识别，车牌识别，都提供 HTTP API 可在使用时调用。
+
 
 ## User Manual
 
