@@ -21,22 +21,22 @@
 ### 使用说明
 #### 新建项目
 软件启动之后，主界面如图所示：
-//main.png
+![main](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/main.png)
 
 下方白色区域将显示最近打开的项目（如果有），若想打开这些项目，直接双击对应项即可。点击“新建项目”按钮，即可建立新的项目。
-//newproj.png
+![newproj](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/newproj.png)
 
 点击“添加图片路径”按钮，可以添加一个文件夹中的所有图片到工作区中——软件会递归搜索该文件夹的所有子文件夹。侧面将显示当前已找到的图片总数。
-//addfolder.png
+![addfolder](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/addfolder.png)
 
 下方区域是标签区，点击“添加标签”即可增加一个新的标签，标签默认以`Label-X`命名，用户可以根据需要，直接自行修改标签的名字。
-//addlabel.png
+![addlabel](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/addlabel.png)
 
 若要删除已有标签，可点击对应标签的数字，选中要删除的标签，然后点击下方的“删除标签”按钮。
 
 #### 标注界面
 在添加完图片和标签之后，即可点击“开始标注”按钮，进入标注工作区。注意**开始标注之前必须添加图片和标签**。工作区主界面如下图所示：
-//workspace.png
+![workspace](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/workspace.png)
 
 为了方便用户使用，软件提供了一些针对各个功能的快捷键，右侧“快捷键”选项卡显示了这些快捷键的具体内容。
 
@@ -51,16 +51,16 @@
 
 #### 开始进行标注
 在需要标注的图片上，点击界面中间位置的对应标签的按钮，即可切换到标注状态。将鼠标移动到工作区，在要进行标注的区域拖拽，即可新建一个标注区：
-//annotating.png
+![annotating](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/annotating.png)
 
 若需要更改某一个标注区的位置，可以直接使用鼠标对其进行拖拽。点击某个标注区，拖拽其周围的黑色控制块，可以改变它的大小。
-//adjust.png
+![adjust](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/adjust.png)
 
 若想要删除某一个标注区，可以点击右侧的“删除”`Delete`键，即可进入删除模式。此时图片上的所有标注区右上角都会多出一个叉号按钮。点击该按钮，即可删除对应的标注区。
-//delete.png
+![delete](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/delete.png)
 
 若想跳过当前图片，可以点击上方的“跳过”`Skip`按钮，此时该图片的所有标注区都将被清空，效果如下所示：
-//skip.png
+![skip](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/skip.png)
 
 点击“保存”`Save`按钮，可以保存到指定的`*.serval`文件中。此外也可以指定保存`*.json`工程文件。工程文件中只包括图片文件夹和标签的信息，不包括标注数据。
 //产品逻辑是否修改？
@@ -70,18 +70,18 @@
 
 #### 将标注数据打包
 若需要标注数据具有可移动性，则可以对标注数据进行打包，将图片文件和标注文件打包进一个`*.7z`文件中。在主界面点击“打包”即可进入打包上传界面。
-//upload.png
+![upload](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/upload.png)
 
 - 点击“选择Serval文件”按钮，可以载入一个标注文件。软件将自动搜索标注文件中标注的所有图片文件，请**确保这些文件没有被移动或删除**。
 - 点击“选择7z程序位置”按钮，选择调用外部的`7z.exe`的位置。本项目自带的`7z.exe`文件在`model/7zfiles`目录下。
 - 点击“选择保存文件位置”按钮，选择保存压缩包的位置。
 
-//added.png
+![added](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/added.png)
 
 - 最后，点击“打包”即可开始进行打包。若图片文件较多，则会需要比较长的时间，请耐心等待，并确保打包文件保存的位置有足够的存储空间。
 
 打包完成之后如下图所示：
-//packdone.png
+![packdone](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/packdone.png)
 
 #### 标注文件和打包文件结构说明
 
