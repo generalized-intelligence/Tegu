@@ -16,9 +16,10 @@ We would like to cover as many use cases as possible, so one of the major goals 
 
 Welcome to Tegu and we would like to thank you for your contribution in advance! If you have decided to contribute to Tegu, you may join [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) to participate in the discussion. If someone else is interested in what you are working on, we will direct him/her to you.
 
----
 
 首先，感谢你能够想到为 Tegu 做出贡献! 如果你真的决定为 Tegu 做出贡献，你可以加入 [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 与我们一起讨论。我们会尽可能地帮助你解决问题。如果有其他人与你的目标重合，我们帮助你找到有同样目标的人。
+
+---
 
 ### New Features
 
@@ -63,7 +64,6 @@ If you would like to help us realize new features:
 
 Feel free to ask any questions at [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge), someone will be able to point you to the right direction.
 
----
 
 Tegu 大致分成两个部分， GUI 和 Tegu-core 部分。Tegu-core 部分主要集中在 `\Network` 文件夹下，包含不同功能的实现，或者相同功能的不同实现。 Tegu-core 部分包含 HTTP API 与外界通信。
 
@@ -98,6 +98,8 @@ Tegu 的一大目标就是让用户尽可能少的接触代码，所以我们还
 
 如果你在实现功能时遇到了问题，可以联系我们 [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) ，我们会尽力帮助你。
 
+---
+
 ### Issues
 
 Submitting issues is also a great way to contribute to the community. Below are some tricks to help us understand what has happened:
@@ -109,7 +111,6 @@ Submitting issues is also a great way to contribute to the community. Below are 
 
 See the [Guideline to Create Minimal, Complete, and Verifiable Issue](https://stackoverflow.com/help/mcve) for an example.
 
----
 
 我们欢迎你向 Tegu 提交 issue ，这能够帮助我们有效的改进 Tegu。以下是一些提交 issue 时的建议，可以帮助我们更好的了解和定位这个 issue:
 
@@ -120,13 +121,15 @@ See the [Guideline to Create Minimal, Complete, and Verifiable Issue](https://st
 
 可以参考[最小，完整，可验证](https://stackoverflow.com/help/mcve)的标准提出 issue 。
 
+---
+
 ### Testing
 
 It would be great if testing is done before submitting the PR. If possible, please include the test case.
 
----
-
 在提交之前最好完成测试，如果可以的话给出测试用例是再好不过的了。
+
+---
 
 ### Help with Compiling
 
@@ -137,7 +140,6 @@ Currently, Tegu supports Windows 10. If you have found out the existing executab
 * Executable file. You may contact us at [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) to upload your packed and compressed executable file and testing environment.
 *  Packed scripts and user manuals of any form.
 
----
 
 由于新的应用场景很可能需要新的框架或者包，我们可能需要不断更新 Release 方式，由于 Tegu 的一大目标是让用户少接触代码，所以能够生成一个纯 GUI 的可执行程序是非常必要的。
 
