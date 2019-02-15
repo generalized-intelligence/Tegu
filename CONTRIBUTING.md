@@ -36,7 +36,6 @@ If you would like to help us realize new features:
 * Optimization of interprocess communication
 * Adding common neural networks, such as passenger detection, vehicle detection, and cat/dog detection
 * Abnormality Detection in Restricted Zone (Training Free)
-* Chinese NLP
 * OCR for common documents, such as personal identifications or receipts (Training Free)
 * Hand Gesture Recognition, Pose Detection based on Feature Point Paring, Facial Feature Point Detection (Training Free)
 * Image Segmentation
@@ -76,7 +75,6 @@ Tegu 的一大目标就是让用户尽可能少的接触代码，所以我们还
 * 修改进程通信模块
 * 建立行人，车辆，猫狗等常见检测模型
 * 禁入区等功能（免训练）
-* 中文语音识别
 * 身份证，发票等常见OCR功能（免训练）
 * 手势识别，人体姿态特征点检测，人脸特征点检测（免训练）
 * 图像分割，要有相应的常见模型
