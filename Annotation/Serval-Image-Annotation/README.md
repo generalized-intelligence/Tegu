@@ -78,11 +78,11 @@ HTTP API is available for Image Recognition, Facial Recognition and License Plat
 
 ## User Manual
 
-See [User Manual](http://www.giai.tech)
+See [User Manual](https://github.com/generalized-intelligence/Tegu/tree/master/Annotation/Serval-Image-Annotation/USER_MANUAL)
 
 ---
 
-参见 [用户手册](http://www.giai.tech)
+参见 [用户手册](https://github.com/generalized-intelligence/Tegu/tree/master/Annotation/Serval-Image-Annotation/USER_MANUAL)
 
 ## Developer Document
 
