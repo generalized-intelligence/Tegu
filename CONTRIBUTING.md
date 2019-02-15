@@ -12,19 +12,26 @@ We would like to cover as many use cases as possible, so one of the major goals 
 
 ---
 
-Tegu 是一个为非专业机器学习工程师设计的开源机器学习快速开发工具。 在 Tegu 中会需要 GUI 组件的参与。 我们希望提供一个尽量简化训练， 甚至免训练的方式来满足大多数机器学习任务。借助 HTTP 通信的形式，用户更加容易的使用 Tegu 的同时，不需要学习任何有关代码。任何能够使用 HTTP 通信的语言都可以与 Tegu 对接.
+## Contribute to Tegu
 
-这个项目分为网络部分以及 GUI 部分。
+Welcome to Tegu and we would like to thank you for your contribution in advance! If you have decided to contribute to Tegu, you may join [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) to participate in the discussion. If someone else is interested in what you are working on, we will direct him/her to you.
 
-网络部分，目前包含了图像检测，视频分类，人脸检测，以及车牌检测，四种不同的应用场景。
 
-GUI 部分，包含使用 GUI 操作网络的所有功能，及 HTTP API 功能。
+首先，感谢你能够想到为 Tegu 做出贡献! 如果你真的决定为 Tegu 做出贡献，你可以加入 [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 与我们一起讨论。我们会尽可能地帮助你解决问题。如果有其他人与你的目标重合，我们帮助你找到有同样目标的人。
 
-我们希望能够覆盖更多的应用场景， 所以项目很大的一个目标是添加更多类型的网络满足各种应用场景。
+---
 
-# Contributing
+### New Features
 
-1. We welcome and appreciate all contributions toward any one of the following topics:
+There are two major components in Tegu, GUI and Tegu-core.
+
+Tegu-core can be found in the `\Network` folder, including realizations for different use cases. Tegu-core also contains codes for HTTP API and external communication.
+
+The GUI component is critical to Tegu, because one of the main goals of Tegu is to minimize the amount of coding required in machine learning development. The GUI component can be found in the `\GUI` folder. It includes the user interfaces for different features (such as training and prediction for image detection) or different realizations of the same feature, as well as the demonstration of outcomes delivered by the feature (for example, real-time training loss).
+
+If you would like to help us realize new features:
+
+1. We welcome and appreciate all contributions toward any one of the topics in the following to-do-list:
 
 * Optimization of interprocess communication
 * Adding common neural networks, such as passenger detection, vehicle detection, and cat/dog detection
@@ -36,11 +43,35 @@ GUI 部分，包含使用 GUI 操作网络的所有功能，及 HTTP API 功能�
 * General OCR
 * Video Tracking (Work-In-Progress)
 
-2. If you would like to contribute towards a feature that is not listed in the To-do list, please try to explain why you think the feature is important for Tegu. A real-life use case of such feature would be a great way to let us know what you think of the feature. We will review each new feature based on the usability of the feature and the amount of maintenance required in the long run.
+2. If you would like to build the GUI component for a feature that you added, or for a new realization for an existing feature, please start a separate PR from the core-code of the feature.
 
----
+3. Please try to use the same version of libraries and infrastructures as the ones already being used. If you would like to introduce new libraries and infrastructures, please clearly list the libraries and required version.
 
-1. 我们在下面的 To-do list 中罗列了一些应用场景和待实现的功能，欢迎大家选择其中任何一项功能做实现。
+4. We are more than grateful if you are kind enough to make the GUI components for features that do not have GUI yet.  Your contributions are valuable for non-programmers in Tegu community.
+
+5. We are working on building our own style guide. In the meanwhile, please follow [PEP8](https://www.python.org/dev/peps/pep-0008/).
+
+6. In your pull request for adding new features, please include the following information in order to help others review your code:
+
+* A README to explain the purpose of such feature
+* Interfaces
+* Any new global/local variables that may affect other parts of the project
+* File directories
+* Any libraries used
+* Configurations
+
+7. Please ensure that all dependency issues are cleared before submitting the PR
+
+Feel free to ask any questions at [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge), someone will be able to point you to the right direction.
+
+
+Tegu 大致分成两个部分， GUI 和 Tegu-core 部分。Tegu-core 部分主要集中在 `\Network` 文件夹下，包含不同功能的实现，或者相同功能的不同实现。 Tegu-core 部分包含 HTTP API 与外界通信。
+
+Tegu 的一大目标就是让用户尽可能少的接触代码，所以我们还需要 GUI 部分来让 Tegu 变得更加易用。 GUI 部分集中在 `\GUI` 文件夹下，包括对每个功能的图形化界面的操作（如图像检测的训练和预测），也包含对使用期间输出信息的展示（如训练时显示实时的 loss 等）。
+
+如果你想帮助我们实现新的功能:
+
+1. 我们在下面的 To-do list 中罗列了一些应用场景和待实现的功能，欢迎大家选择其中任何一项功能做实现：
 
 * 修改进程通信模块
 * 建立行人，车辆，猫狗等常见检测模型
@@ -52,39 +83,67 @@ GUI 部分，包含使用 GUI 操作网络的所有功能，及 HTTP API 功能�
 * 通用 OCR
 * 视频追踪 (Work-In-Progress)
 
-2. 如果您想提供 To-do list 中没有的功能，我们也十分欢迎。请在提交时告诉我们这项功能的重要性，并举例相关落地场景。我们会权衡新功能的实用性及维护成本，决定是否接受您的贡献。
-
-## Pull Request Process
-
-1. Please ensure that each pull request only contains the implementation or modification for ONE feature, without any modification that is irrelevant to the dedicated feature. If you would like to implement more than one feature (it will be well-appreciated!), please start a pull request for each distinct feature.
-
-2. In your pull request for adding new features, please include the following information in order to help others review your code:
-
-* A README to explain the purpose of such feature
-* Interfaces
-* Any new global/local variables that may affect other parts of the project
-* File directories
-* Any libraries used
-* Configurations
-
-3. Please ensure that all dependency issues are cleared before submitting the PR
-
-4. Please follow [PEP8](https://www.python.org/dev/peps/pep-0008/)  style guide.
-
----
-
-1. 请确保每个 pull request 都只是一个特定功能或者改进。请不要包含其他不相关的改进。如果您想实现或修改多个功能，请为每个功能或改进建立多个独立的 pull request。
-
-2. 在您的每个新功能的 PR 中请务必写好相应的：
+2. 如果在实现了一个新的应用场景，或者添加了一个已有应用场景的新实现后，你还想完成该功能的 GUI 部分，请为 GUI 模块单独新建一个 pull request。
+3. 请尽量使用已有的框架或包的当前已经在使用的版本，如果你需要添加新的包或者框架，请注明所用到的包和版本。
+4. 如果你发现有些功能还没有相对应的 GUI ，我们非常欢迎你完成相应的 GUI ，并感激你为社区中非程序员用户使用 Tegu 做出的贡献。
+5. 我们正在编写属于我们的命名规范，于此同时，请尽量使用 [PEP8](https://www.python.org/dev/peps/pep-0008/) 编码规范。
+6. 在您的每个新功能的 PR 中请务必写好相应的：
 * README 来阐述功能
 * 接口
 * 新引入的，有可能对外部有影响的，全局/环境变量等
 * 文件路径
 * 用到的库
 * 配置项
+7. 请确保在提交代码之前已经处理好所有的依赖项。
 
-3. 请在提交代码前处理好所有的依赖项。
+如果你在实现功能时遇到了问题，可以联系我们 [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) ，我们会尽力帮助你。
 
-4. 请使用 [PEP8](https://www.python.org/dev/peps/pep-0008/) 编码规范。
+---
 
- 
+### Issues
+
+Submitting issues is also a great way to contribute to the community. Below are some tricks to help us understand what has happened:
+
+* Tell us what you expected to happen
+* Tell us what happened in reality. If this is an Exception, please paste the entire Trackback.
+* If possible, paste your code to help us locate and resolve the issue.
+* List the operating environment (Windows or Linux, version of Keras and Tensorflow)
+
+See the [Guideline to Create Minimal, Complete, and Verifiable Issue](https://stackoverflow.com/help/mcve) for an example.
+
+
+我们欢迎你向 Tegu 提交 issue ，这能够帮助我们有效的改进 Tegu。以下是一些提交 issue 时的建议，可以帮助我们更好的了解和定位这个 issue:
+
+* 请描述你期待发生什么事情。
+* 请描述实际发生了什么事情，如果是一个 Exception 请粘贴完整的 Trackback。
+* 如果有可能，贴上一些代码，能够帮助我们定位和解决问题。
+* 贴出你的运行环境。(Windows or Linux，Keras 和 Tensorflow 的版本)
+
+可以参考[最小，完整，可验证](https://stackoverflow.com/help/mcve)的标准提出 issue 。
+
+---
+
+### Testing
+
+It would be great if testing is done before submitting the PR. If possible, please include the test case.
+
+在提交之前最好完成测试，如果可以的话给出测试用例是再好不过的了。
+
+---
+
+### Help with Compiling
+
+As new libraries and infrastructures may be needed for new features, we may need to change how we release the software in the future. One of the main goals of Tegu is to minimize the amount of coding required for machine learning development. Therefore, providing executable GUI-based software is critical.
+
+Currently, Tegu supports Windows 10. If you have found out the existing executable software is not in sync with the code-only software, feel free to provide:
+
+* Executable file. You may contact us at [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) to upload your packed and compressed executable file and testing environment.
+*  Packed scripts and user manuals of any form.
+
+
+由于新的应用场景很可能需要新的框架或者包，我们可能需要不断更新 Release 方式，由于 Tegu 的一大目标是让用户少接触代码，所以能够生成一个纯 GUI 的可执行程序是非常必要的。
+
+目前 Tegu 支持 Windows 10 环境，如果你发现目前提供的可执行程序的版本比纯代码版本落后，我们欢迎并感谢你提供：
+
+* 打包后的可执行程序文件。你可以联系我们 [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 上传你打包过后的压缩文件，并请提供你测试的系统环境。
+* 打包的脚本，和任何形式的说明文档。
