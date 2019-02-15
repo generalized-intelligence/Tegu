@@ -84,7 +84,37 @@
 ![packdone](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/packdone.png)
 
 #### 标注文件和打包文件结构说明
+软件默认会对`*.serval`文件进行加密，若您不想对文件加密，您可以修改`config/defaults.py`，修改以下代码：
+```python
+ENCRYPT_KEY="GIIA-py-opensource"
+```
+为：
+```python
+ENCRYPT_KEY=""
+```
 
+一个解密后的文件格式如下所示：
+```
+aimg0000825a7dd7ab6fc10f270e8b9dfa4f5a96
+0:__background__,1:Label-1,2:Label-2,3:Label-3,4:Label-4
+C:/Users/qrato/Pictures/Saved Pictures/std_pic.jpg:1,518,288,833,624,2,1106,584,1328,837
+C:/Users/qrato/Pictures/Saved Pictures/tempfile.jpg:3,568,342,903,541
+C:/Users/qrato/Pictures/Saved Pictures/test.jpg:4,1205,514,1727,950
+```
+第一行为完整性校验码，第二行为标签（其中`0:__background__`为背景），接下来每一行都是对应的文件和标注区域（标签，对角点坐标）。此处储存的文件路径均为绝对路径，因此若您直接使用`*.serval`文件在本机执行训练，请**务必确保您的图片文件没有被移动或删除**。
+
+---
+若要将数据文件传输至另一台训练用机（例如泛化智能提供的服务器），您需要使用打包功能将文件打包。打包完成之后的压缩包结构如下所示：
+//unzip.png
+经过解密的`serval`文件如下所示：
+```
+aimg00006ace52691f26af037438575c47123c44
+0:__background__,1:Label-1,2:Label-2,3:Label-3,4:Label-4
+C_Users_qrato_Pictures_Saved Pictures/std_pic.jpg:1,518,288,833,624,2,1106,584,1328,837
+C_Users_qrato_Pictures_Saved Pictures/tempfile.jpg:3,568,342,903,541
+C_Users_qrato_Pictures_Saved Pictures/test.jpg:4,1205,514,1727,950
+```
+此时储存的文件路径为相对路径，您可以安全地将整个压缩包转移至目标机。
 
 
 

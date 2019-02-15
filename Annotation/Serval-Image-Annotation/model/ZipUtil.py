@@ -1,7 +1,8 @@
 import shutil
 from model.EncryptTools import *
 from config import defaults as DEF
-ZIP_PASS='GIIA-py-opensource'
+ZIP_PASS=DEF.ZIP_PASS
+import os
 class Ziputil():
     def __init__(self, ziptoolpath:str, zipfilepath:str):
         self.ziptoolpath=ziptoolpath

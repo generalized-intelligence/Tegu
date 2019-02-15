@@ -177,6 +177,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
             QMessageBox.information(self,"保存完成","文件已保存到:"+file_path,QMessageBox.Ok)
             return True
         except Exception as e:
+            print(e)
             QMessageBox.warning(self, "保存文件失败", "无法打开文件:" + file_path, QMessageBox.Ok)
             return False
 

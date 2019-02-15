@@ -3,6 +3,8 @@ from hashlib import md5
 from config import defaults as DEF
 
 def encrypt(key, clear):
+    if len(key)==0:
+        return clear
     enc = []
     if not isinstance(clear, bytes):
         clear = clear.encode('utf-8')
@@ -15,7 +17,8 @@ def encrypt(key, clear):
 
 
 def decrypt(key, enc):
-    """might need to modified for py27 w/o encoding"""
+    if len(key)==0:
+        return enc
     dec = []
     enc = base64.standard_b64decode(enc)
     for i in range(len(enc)):

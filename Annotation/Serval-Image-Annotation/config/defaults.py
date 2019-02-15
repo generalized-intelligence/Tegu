@@ -6,13 +6,14 @@ from PyQt5.QtGui import QColor, QPen
 
 
 DEFAULT_UI_LANGUAGE = 'en_US'
-# DEFAULT_UI_LANGUAGE = 'zh_CN'
+#DEFAULT_UI_LANGUAGE = 'zh_CN'
 
 SERVAL_HEADER_PREFIX_IMAGE='aimg0000'
 
 
-ENCRYPT_KEY="GIIA-py-opensource"
-
+#ENCRYPT_KEY="GIIA-py-opensource"
+ENCRYPT_KEY=""
+ZIP_PASS='GIIA-py-opensource'
 MAX_ACTION_NUMBER = 999
 RECENT_JSON="recent.json"
 SUPPORTED_FILE_FORMATS="jpg|png|gif"
