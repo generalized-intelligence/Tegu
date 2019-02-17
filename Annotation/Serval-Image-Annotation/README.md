@@ -40,15 +40,26 @@ python3 main.py
 
 
 ## File Structure
+* src/:Source Code
+* test/:Unit test for the annotation data structure and model
+* USER_MANUAL/:User manual 
+* DEVELOPER_DOCUMENT/:Developer documents for modifying code
 
-* config/: User Interface, written with [PyQt5](https://www.riverbankcomputing.com/software/pyqt/download5)
-* Network/: Neural Networks, called by scripts in GUI/
-* hook/: hook file used to make Windows .exe file
-* Resource/: Elements used to make GUI
-* Util/: Utility used in the project
+- In `src/` directory there are project code files , file structure as follows:
+* config/:the configs required by the project
+* UI_instance/: the UI instance written in [PyQt5](https://www.riverbankcomputing.com/software/pyqt/download5)
+* UI_instance/UI_model: the UI definition and customized widgets , including `*.ui` files which can be modified by Qt Designer and pyuic
+* model/: the tools and predefined data structures
+* main.py: the main file with the definition of main window
 
 ---
-* config/: 项目所需的一些配置所在位置
+* src/:项目源代码
+* test/:针对定义数据结构和数据存储模型的测试代码
+* USER_MANUAL/:用户手册
+* DEVELOPER_DOCUMENT/:开发者文档，用于修改代码时作为参照
+
+- 在`src/`目录中，为项目代码文件，定义如下：
+* config/:项目所需的一些配置所在位置
 * UI_instance/: 项目的UI实例部分，使用 [PyQt5](https://www.riverbankcomputing.com/software/pyqt/download5) 编写。
 * UI_instance/UI_model: 项目的UI定义和自定义控件部分，包含`*.ui`文件，可以使用 Qt Designer 配合 pyuic 修改并生成新的`*.py` UI定义文件。 
 * model/: 项目中使用的工具组件、数据存储模型和自定义数据结构。
@@ -57,11 +68,12 @@ python3 main.py
 
 ## Existing Features
 
-* Video Classification (Long Video Classification)
-* Image Recognition
-* Facial Recognition (build feature library, and recognize)
-* License Plate Recognition
-
+* Read and annotate image files in folders
+* Add multiple folders
+* Customize multiple labels
+* Save your imcomplete annotating project as files , project files(`*.json`) and annotation files(`*.serval`) will be storaged seperately
+* Encrypt and decrypt annotation files(`*.serval`).The Encryption key of the TIA open-source version is located in `config/defaults.py`, set as `TIA-py-opensource`
+* Compress image files and annotation files in a zip file`*.7z`,which relies on an outer executable file `7z.exe`, located in `model/7zfiles`
 HTTP API is available for Image Recognition, Facial Recognition and License Plate Recognition
 
 ---
@@ -71,7 +83,7 @@ HTTP API is available for Image Recognition, Facial Recognition and License Plat
 * 支持自定义多个标签
 * 支持将未完成的标注储存为工程文件，工程文件(`*.json`)与标注文件(`*.serval`)将分开储存
 * 对标注文件(`*.serval`)进行加密和解密——开源版TIA使用的加密秘钥位于`config/defaults.py`中，默认设置为`TIA-py-opensource`
-* 将标注图像和标注文件打包成`*.zip`格式的压缩文件，便于上传——该功能依赖外部的`7z.exe`，位于`model/7zfiles`文件夹中
+* 将标注图像和标注文件打包成`*.7z`格式的压缩文件，便于上传——该功能依赖外部的`7z.exe`，位于`model/7zfiles`文件夹中
 
 
 
@@ -110,7 +122,8 @@ See [User Manual](http://www.giai.tech)
 * 集成压缩模块，不再依赖外部`7z`
 * 对压缩打包功能添加多线程支持
 * 在 macOS 和 Linux 平台上完成测试
-
+* 选择文件夹页面中增加“刷新文件”和“删除目录”功能
+* 修复2K屏幕下的显示问题（Linux）
 # Meta
 
 Project initialized by Generalized Intelligence

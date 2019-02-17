@@ -11,9 +11,9 @@ DEFAULT_UI_LANGUAGE = 'en_US'
 SERVAL_HEADER_PREFIX_IMAGE='aimg0000'
 
 
-#ENCRYPT_KEY="GIIA-py-opensource"
+#ENCRYPT_KEY="TIA-py-opensource"
 ENCRYPT_KEY=""
-ZIP_PASS='GIIA-py-opensource'
+ZIP_PASS='TIA-py-opensource'
 MAX_ACTION_NUMBER = 999
 RECENT_JSON="recent.json"
 SUPPORTED_FILE_FORMATS="jpg|png|gif"
