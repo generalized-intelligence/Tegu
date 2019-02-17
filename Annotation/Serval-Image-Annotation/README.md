@@ -1,14 +1,13 @@
 ![Tegu Logo](https://s2.ax1x.com/2019/01/30/kl6rzF.jpg)
-# GIIA-Python
-## Generalized Intelligence Image Annotator based on PyQt
-## 泛化智能图像标注工具（Python版）
+## Tegu Image Annotator based on PyQt
+## Tegu 图像标注工具（Python版）
 
-Tegu is a rapid development toolkit for non-ML programmers who need to use machine learning for some aspect of their work. From our development experience, most machine learning demands can be solved by very simple solutions, but most existing solutions are too heavy. For example, if a drone engineer needs to implement object recognition, it is not efficient for him to learning machine learning from scratch. Tegu is a light toolkit for Non-ML programmers to develop machine learning solutions. Tegu GUI supports Windows and Linux, providing the most common machine learning implementations. 
+Tegu Image Annotator(TIA) is a tool which works with TeguCV. The TIA is used to provide annotated data for the deep learning models in computer vision. It can help user to annotate image data fast and easily.
 
-Also, for professional machine learning engineers, most of the work (such as parameter tuning) should be simplified. Tegu is a good set of tool to simplify the workflow.
+The TIA has been tested on Windows 10 1803 x64 platform, and also provides support of the Linux and macOS platforms.
 
 ---
-泛化智能图像标注工具（ Generalized Intelligence Image Annotator，以下简称GIIA）是TeguCV 的一个配套工具，用于为计算机视觉方向的深度学习模型提供标注数据。该工具能以可视化的形式，帮助用户方便快捷地为深度学习模型准备经过标注的图像数据。该工具目前已在 Windows 10 1803 x64 平台测试通过。
+Tegu图像标注工具（ Tegu Image Annotator，以下简称TIA）是TeguCV 的一个配套工具，用于为计算机视觉方向的深度学习模型提供标注数据。该工具能以可视化的形式，帮助用户方便快捷地为深度学习模型准备经过标注的图像数据。该工具目前已在 Windows 10 1803 x64 平台测试通过，并同样提供Linux和macOS平台的支持。
 
 
 
@@ -21,7 +20,7 @@ Also, for professional machine learning engineers, most of the work (such as par
 pip3 install -r requirements.txt
 ```
 
-3. Once all requirements are installed, use the following command to launch GIIA:
+3. Once all requirements are installed, use the following command to launch TIA:
 ``` sh
 python3 main.py
 ```
@@ -34,7 +33,7 @@ python3 main.py
 pip3 install -r requirements.txt
 ```
 
-3. 安装好所需框架以后，使用以下命令运行 GIIA:
+3. 安装好所需框架以后，使用以下命令运行 TIA:
 ``` sh
 python3 main.py
 ```
@@ -71,7 +70,7 @@ HTTP API is available for Image Recognition, Facial Recognition and License Plat
 * 支持同时添加多个文件夹
 * 支持自定义多个标签
 * 支持将未完成的标注储存为工程文件，工程文件(`*.json`)与标注文件(`*.serval`)将分开储存
-* 对标注文件(`*.serval`)进行加密和解密——开源版GIIA使用的加密秘钥位于`config/defaults.py`中，默认设置为`GIIA-py-opensource`
+* 对标注文件(`*.serval`)进行加密和解密——开源版TIA使用的加密秘钥位于`config/defaults.py`中，默认设置为`TIA-py-opensource`
 * 将标注图像和标注文件打包成`*.zip`格式的压缩文件，便于上传——该功能依赖外部的`7z.exe`，位于`model/7zfiles`文件夹中
 
 
