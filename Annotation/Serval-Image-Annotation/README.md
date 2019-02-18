@@ -104,14 +104,15 @@ See [User Manual](http://www.giai.tech)
 
 ## TODO
 
-* Optimization of interprocess communication
-* Adding common neural networks, such as passenger detection, vehicle detection, and cat/dog detection
-* Abnormality Detection in Restricted Zone (Training Free)
-* Chinese NLP
-* Hand Gesture Recognition, Pose Detection based on Feature Point Paring, Facial Feature Point Detection (Training Free)
-* Image Segmentation
-* General OCR
-* Video Tracking (Work-In-Progress)
+* Seperate a `*.serval` file into several files corresponding to picture folders 
+* Choose to Enable/Disable the encryption
+* Adjustment and optimization of UI details
+* Full localized support for Chinese/English
+* Use the ziputil module of python instead of `7z.exe`
+* Multi-Thread support for compression
+* Test on macOS and Linux platforms
+* Add "refresh file" and "delete folder" when choosing folders
+* Repair the display issue on Linux and 2K Display
 
 ---
 
