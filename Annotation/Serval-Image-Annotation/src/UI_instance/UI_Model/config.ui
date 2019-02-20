@@ -27,7 +27,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="2,4,0">
    <item>
-    <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0" columnstretch="0,11,0">
+    <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0" columnstretch="1,4,1">
      <property name="topMargin">
       <number>0</number>
      </property>
@@ -41,22 +41,12 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QPushButton" name="btnAdd">
-       <property name="text">
-        <string>添加图片路径</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_3">
        <property name="text">
         <string>当前已选定图片路径</string>
        </property>
       </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QListWidget" name="listWidget"/>
      </item>
      <item row="1" column="2">
       <widget class="QLabel" name="lblstatus">
@@ -74,19 +64,42 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QPlainTextEdit" name="txtProjname">
+     <item row="2" column="0">
+      <widget class="QPushButton" name="btnAdd">
+       <property name="text">
+        <string>添加图片路径</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="btnRefresh">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>28</height>
-        </size>
+       <property name="text">
+        <string>刷新图片</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QListWidget" name="listWidget"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="txtProjname"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="btnDelPath">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string> 删除当前路径 </string>
        </property>
       </widget>
      </item>

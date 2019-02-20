@@ -4,9 +4,16 @@
 ## 泛化智能图像标注工具（Python版）用户手册
 
 ### 概述
-泛化智能图像标注工具（ Generalized Intelligence Image Annotator，以下简称GIIA）是TeguCV 的一个配套工具，用于为计算机视觉方向的深度学习模型提供标注数据。该工具能以可视化的形式，帮助用户方便快捷地为深度学习模型准备经过标注的图像数据。该工具目前已在 Windows 10 1803 x64 平台测试通过。
+泛化智能图像标注工具（ Generalized Intelligence Image Annotator，以下简称GIIA）是TeguCV 的一个配套工具，用于为计算机视觉方向的深度学习模型提供标注数据。该工具能以可视化的形式，帮助用户方便快捷地为深度学习模型准备经过标注的图像数据。该工具目前已在 Windows 10 1803 x64 平台测试通过，，理论上可以直接在Linux和macOS平台上运行（未经测试）。
 
 本软件要求屏幕分辨率不小于 1024X768 。
+---
+Tegu Image Annotator(TIA) is a tool which works with TeguCV. The TIA is used to provide annotated data for the deep learning models in computer vision. It can help user to annotate image data fast and easily.
+
+The TIA has been tested on Windows 10 1803 x64 platform, and also provides support of the Linux and macOS platforms (not tested).
+
+The TIA requires that your screen resolution is not smaller than 1024 X 768
+---
 
 
 ### 功能
@@ -17,6 +24,17 @@
 * 支持将未完成的标注储存为工程文件，工程文件(`*.json`)与标注文件(`*.serval`)将分开储存
 * 对标注文件(`*.serval`)进行加密和解密——开源版GIIA使用的加密秘钥位于`config/defaults.py`中，默认设置为`GIIA-py-opensource`
 * 将标注图像和标注文件打包成`*.zip`格式的压缩文件，便于上传——该功能依赖外部的`7z.exe`，位于`model/7zfiles`文件夹中
+
+---
+* Read and annotate image files in folders
+* Add multiple folders
+* Customize multiple labels
+* Save your imcomplete annotating project as files , project files(`*.json`) and annotation files(`*.serval`) will be storaged seperately
+* Encrypt and decrypt annotation files(`*.serval`).The Encryption key of the TIA open-source version is located in `config/defaults.py`, set as `TIA-py-opensource`
+* Compress image files and annotation files in a zip file`*.7z`,which relies on an outer executable file `7z.exe`, located in `model/7zfiles`
+
+---
+
 
 ### 使用说明
 #### 新建项目

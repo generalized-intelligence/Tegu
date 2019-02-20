@@ -74,7 +74,7 @@ python3 main.py
 * Save your imcomplete annotating project as files , project files(`*.json`) and annotation files(`*.serval`) will be storaged seperately
 * Encrypt and decrypt annotation files(`*.serval`).The Encryption key of the TIA open-source version is located in `config/defaults.py`, set as `TIA-py-opensource`
 * Compress image files and annotation files in a zip file`*.7z`,which relies on an outer executable file `7z.exe`, located in `model/7zfiles`
-HTTP API is available for Image Recognition, Facial Recognition and License Plate Recognition
+
 
 ---
 
