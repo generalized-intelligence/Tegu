@@ -39,39 +39,68 @@ The TIA requires that your screen resolution is not smaller than 1024 X 768
 ### 使用说明
 #### 新建项目
 软件启动之后，主界面如图所示：
+
+---
+When the TIA launches, the main window shows as follow:
 ![main](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/main.png)
 
+
 下方白色区域将显示最近打开的项目（如果有），若想打开这些项目，直接双击对应项即可。点击“新建项目”按钮，即可建立新的项目。
+---
+The following spaces shows the recent projects(if there are), if you want to open the project, just double click the item. Click "New Project" to create a new project.
+
 ![newproj](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/newproj.png)
 
 点击“添加图片路径”按钮，可以添加一个文件夹中的所有图片到工作区中——软件会递归搜索该文件夹的所有子文件夹。侧面将显示当前已找到的图片总数。
+---
+Click "Add picture path" to add all the pictures in a folder to the project. The TIA will search recurcively all those subfolders. At the right of the window shows the total number of the pictures got.
 ![addfolder](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/addfolder.png)
 
 下方区域是标签区，点击“添加标签”即可增加一个新的标签，标签默认以`Label-X`命名，用户可以根据需要，直接自行修改标签的名字。
+---
+The following spaces is label zone, click "Add label" to add a new label named as `Label-X`, you can change the label name if necessary.
 ![addlabel](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/addlabel.png)
 
 若要删除已有标签，可点击对应标签的数字，选中要删除的标签，然后点击下方的“删除标签”按钮。
+---
+Click the label number and then click "Delete label" to remove the label.
 
 #### 标注界面
 在添加完图片和标签之后，即可点击“开始标注”按钮，进入标注工作区。注意**开始标注之前必须添加图片和标签**。工作区主界面如下图所示：
+---
+After adding pictures and labels, click "Start Annotation" to enter the annotation workspace. Notice that **you must add pictures and labels before annotation**. The workspace shows as follows:
+
 ![workspace](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/workspace.png)
 
 为了方便用户使用，软件提供了一些针对各个功能的快捷键，右侧“快捷键”选项卡显示了这些快捷键的具体内容。
-
+---
+To improve the efficency, the TIA provides some key shortcuts for those annotation functions, click the "key shortcuts" tab to show those keymap.
 
 左侧界面显示用户图片的具体内容——点击下方的`+`和`-`按钮，可以放大或缩小图片，点击正中央的`1:1`按钮，可以让图片恢复原始显示尺寸。
+---
+The left space shows the current picture, click the `+` and `-` button below the picture to zoom in or zoom out the picture, and click the `1:1` button to recover the picture into original size.
 
 下方文本框会显示当前标注区域的对角坐标和鼠标指针当前的坐标，可供参考。
+---
+The textbox under the picture shows the diagonal coordinates of current annotation zone and the coordinate of the mouse cursor as a referrence.
 
 点击右侧界面的“项目资源”选项卡，可以显示当前加载的所有图片（此处显示绝对路径）。在指定图片上双击可跳转至指定图片。若需要选择下一张或上一张图片，点击“下一张”`Next`或“上一张”`Prev`按钮即可。
+---
+Click the "project resources" tab to show all those absolute paths of the pictures in current project. Double click to open the picture , click `Next` or `Prev` to go to the next or previous picture. 
 
 界面中间位置列举了此前添加的所有标签，点击最上方的“跳过”`Skip`按钮可以跳过当前图片。
+---
+The middle area of the workspace shows all the labels added, click the `Skip` button to skip the current picture.
 
 #### 开始进行标注
 在需要标注的图片上，点击界面中间位置的对应标签的按钮，即可切换到标注状态。将鼠标移动到工作区，在要进行标注的区域拖拽，即可新建一个标注区：
+---
+Click the button of the label you want to annotate, then you'll get into annotating state. Move your mouse to the workspace and drag to create a new annotation zone.
 ![annotating](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/annotating.png)
 
 若需要更改某一个标注区的位置，可以直接使用鼠标对其进行拖拽。点击某个标注区，拖拽其周围的黑色控制块，可以改变它的大小。
+---
+You can directly drag an annotation zone to move it, and drag the black control blocks to change its size.
 ![adjust](https://raw.githubusercontent.com/generalized-intelligence/Tegu/master/Annotation/Serval-Image-Annotation/USER_MANUAL/resources/adjust.png)
 
 若想要删除某一个标注区，可以点击右侧的“删除”`Delete`键，即可进入删除模式。此时图片上的所有标注区右上角都会多出一个叉号按钮。点击该按钮，即可删除对应的标注区。
