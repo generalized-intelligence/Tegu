@@ -1,15 +1,9 @@
 ![Tegu Logo](https://s2.ax1x.com/2019/01/30/kl6rzF.jpg)
 ## Tegu Image Annotator based on PyQt
-## Tegu 图像标注工具（Python版）
 
-Tegu Image Annotator(TIA) is a tool which works with TeguCV. The TIA is used to provide annotated data for the deep learning models in computer vision. It can help user to annotate image data fast and easily.
+Tegu Image Annotator(TIA) is a complementary tool of TeguCV. The TIA is used to provide annotated data for the deep learning models in computer vision. It can help users to annotate image data fast and easily.
 
-The TIA has been tested on Windows 10 1803 x64 platform, and also provides support of the Linux and macOS platforms.
-
----
-Tegu图像标注工具（ Tegu Image Annotator，以下简称TIA）是TeguCV 的一个配套工具，用于为计算机视觉方向的深度学习模型提供标注数据。该工具能以可视化的形式，帮助用户方便快捷地为深度学习模型准备经过标注的图像数据。该工具目前已在 Windows 10 1803 x64 平台测试通过，并同样提供Linux和macOS平台的支持。
-
-
+The TIA has been tested on Windows 10 1803 x64 platform, and also provides support for Linux and macOS platforms.
 
 ## Quick Start
 
@@ -24,20 +18,6 @@ pip3 install -r requirements.txt
 ``` sh
 python3 main.py
 ```
----
-
-1. 首先请安装 [Python3](https://www.python.org) 以及 [pip3](https://pip.pypa.io/en/stable/installing)。
-2. 使用如下命令安装所需的 Python 框架:
-
-```sh
-pip3 install -r requirements.txt
-```
-
-3. 安装好所需框架以后，使用以下命令运行 TIA:
-``` sh
-python3 main.py
-```
-
 
 ## File Structure
 * src/:Source Code
@@ -52,7 +32,67 @@ python3 main.py
 * model/: the tools and predefined data structures
 * main.py: the main file with the definition of main window
 
+## Existing Features
+
+* Read and annotate images from folders
+* Add images from multiple folders
+* Add multiple labels
+* Save imcomplete annotating project as project files. Project files(`*.json`) and annotation files(`*.serval`) will be saved seperately.
+* Encrypt and decrypt annotation files(`*.serval`). The Encryption key of the TIA open-source version is located in `config/defaults.py`, as `TIA-py-opensource`
+* Compress image files and annotation files in a zip file`*.7z`,which relies on an outer executable file `7z.exe`, located in `model/7zfiles`
+
+## User Manual
+
+See [User Manual](https://github.com/generalized-intelligence/Tegu/tree/master/Annotation/Serval-Image-Annotation/USER_MANUAL)
+
+## Developer Document
+
+See [User Manual](http://www.giai.tech)
+
+## TODO
+
+* Seperate a `*.serval` file into several files corresponding to picture folders 
+* Choose to Enable/Disable the encryption
+* Adjustment and optimization of UI details
+* Full localized support for Chinese/English
+* Use the ziputil module of python instead of `7z.exe`
+* Multi-thread support for compression
+* Test on macOS and Linux platforms
+* Add "refresh file" and "delete folder" when choosing folders
+* Repair the display issue on Linux and 2K Display
+
+# Meta
+
+Project initialized by Generalized Intelligence
+
+Distributed under the BSD 3-Clause license. See LICENSE for more information.
+
+# Contribute
+
+Please follow CONTRIBUTING.md
+
 ---
+
+## Tegu 图像标注工具（Python版）
+
+Tegu图像标注工具（ Tegu Image Annotator，以下简称TIA）是TeguCV 的一个配套工具，用于为计算机视觉方向的深度学习模型提供标注数据。该工具能以可视化的形式，帮助用户方便快捷地为深度学习模型准备经过标注的图像数据。该工具目前已在 Windows 10 1803 x64 平台测试通过，并同样提供Linux和macOS平台的支持。
+
+## 快速开始
+
+1. 首先请安装 [Python3](https://www.python.org) 以及 [pip3](https://pip.pypa.io/en/stable/installing)。
+2. 使用如下命令安装所需的 Python 框架:
+
+```sh
+pip3 install -r requirements.txt
+```
+
+3. 安装好所需框架以后，使用以下命令运行 TIA:
+``` sh
+python3 main.py
+```
+
+## 文件结构
+
 * src/:项目源代码
 * test/:针对定义数据结构和数据存储模型的测试代码
 * USER_MANUAL/:用户手册
@@ -65,18 +105,7 @@ python3 main.py
 * model/: 项目中使用的工具组件、数据存储模型和自定义数据结构。
 * main.py: 项目入口文件，同时还包括主窗体类的定义。
 
-
-## Existing Features
-
-* Read and annotate image files in folders
-* Add multiple folders
-* Customize multiple labels
-* Save your imcomplete annotating project as files , project files(`*.json`) and annotation files(`*.serval`) will be storaged seperately
-* Encrypt and decrypt annotation files(`*.serval`).The Encryption key of the TIA open-source version is located in `config/defaults.py`, set as `TIA-py-opensource`
-* Compress image files and annotation files in a zip file`*.7z`,which relies on an outer executable file `7z.exe`, located in `model/7zfiles`
-
-
----
+## 现有功能
 
 * 读取文件夹中的文件，进行图片标注
 * 支持同时添加多个文件夹
@@ -85,36 +114,15 @@ python3 main.py
 * 对标注文件(`*.serval`)进行加密和解密——开源版TIA使用的加密秘钥位于`config/defaults.py`中，默认设置为`TIA-py-opensource`
 * 将标注图像和标注文件打包成`*.7z`格式的压缩文件，便于上传——该功能依赖外部的`7z.exe`，位于`model/7zfiles`文件夹中
 
-
-
-## User Manual
-
-See [User Manual](https://github.com/generalized-intelligence/Tegu/tree/master/Annotation/Serval-Image-Annotation/USER_MANUAL)
-
----
+## 用户手册
 
 参见 [用户手册](https://github.com/generalized-intelligence/Tegu/tree/master/Annotation/Serval-Image-Annotation/USER_MANUAL)
 
-## Developer Document
+## 开发者文档
 
-See [User Manual](http://www.giai.tech)
----
 参见 [开发者文档](http://www.giai.tech)
 
-
 ## TODO
-
-* Seperate a `*.serval` file into several files corresponding to picture folders 
-* Choose to Enable/Disable the encryption
-* Adjustment and optimization of UI details
-* Full localized support for Chinese/English
-* Use the ziputil module of python instead of `7z.exe`
-* Multi-Thread support for compression
-* Test on macOS and Linux platforms
-* Add "refresh file" and "delete folder" when choosing folders
-* Repair the display issue on Linux and 2K Display
-
----
 
 * 增加拆分`*.serval`文件到对应的图片文件夹功能
 * 可以自行开启和关闭对`*.serval`文件的加密
@@ -125,16 +133,12 @@ See [User Manual](http://www.giai.tech)
 * 在 macOS 和 Linux 平台上完成测试
 * 选择文件夹页面中增加“刷新文件”和“删除目录”功能
 * 修复2K屏幕下的显示问题（Linux）
+
 # Meta
 
-Project initialized by Generalized Intelligence
-
 泛化智能 Generalized Intelligence 出品。
-
-Distributed under the BSD 3-Clause license. See LICENSE for more information.
+本项目通过 BSD 3-Clause 协议发布及传播。详情见 LICENSE。
 
 # Contribute
-
-Please follow CONTRIBUTING.md
 
 请参阅 CONTRIBUTING.md
