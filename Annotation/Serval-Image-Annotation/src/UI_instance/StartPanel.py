@@ -25,7 +25,7 @@ class StartPanel(QWidget, Ui_start):
         #print(proj_path)
         import os
         if not os.path.exists(proj_path):
-            QMessageBox.warning(self, "打开工程失败", "工程文件不存在:" + proj_path, QMessageBox.Ok)
+            QMessageBox.warning(self, "Open project failed", "File not exist:" + proj_path, QMessageBox.Ok)
             return
         else:
             result=self.OpenProjFileWithName(proj_path)
@@ -33,9 +33,9 @@ class StartPanel(QWidget, Ui_start):
                 if os.path.exists(serval_path):
                     result_serval=self.OpenServalFileWithName(serval_path)
                     if not result_serval:
-                        QMessageBox.warning(self, "未能打开标注文件", "工程将以无标注开始", QMessageBox.Ok)
+                        QMessageBox.warning(self, "Failed to open serval file", "The project will start without annotations.", QMessageBox.Ok)
                 else:
-                    QMessageBox.warning(self, "没有找到标注文件", "工程将以无标注开始", QMessageBox.Ok)
+                    QMessageBox.warning(self, "Serval file not found", "The project will start without annotations.", QMessageBox.Ok)
             else:
                 #QMessageBox.warning(self, "打开工程失败", "工程文件不合法:" + proj_path, QMessageBox.Ok)
                 return
@@ -48,12 +48,12 @@ class StartPanel(QWidget, Ui_start):
             with open(file_path, encoding='utf-8') as f:
                 file_read = f.read()
         except Exception as e:
-            QMessageBox.warning(self, "打开文件失败", "无法打开文件:" + file_path, QMessageBox.Ok)
+            QMessageBox.warning(self, "Open serval failed", "Failed to open serval file:" + file_path, QMessageBox.Ok)
             return False
         serval_content = T.decrypt(DEF.ENCRYPT_KEY, file_read)
         # print(serval_content)
         if T.validateHeader(serval_content) != 0:
-            QMessageBox.warning(self, "校验失败", "不是合法的标注文件:" + file_path, QMessageBox.Ok)
+            QMessageBox.warning(self, "Validation failed", "Serval file illegal:" + file_path, QMessageBox.Ok)
             return False
         self.aim.initWithSerializeString(serval_content)
         # print(self.aim.imgAnnos)
@@ -69,10 +69,10 @@ class StartPanel(QWidget, Ui_start):
                 self.picture_path = proj_dict['images']
                 self.aim.labels = proj_dict['labels']
                 self.load_proj = True
-            QMessageBox.information(self, "打开完成", "已载入工程:" + file_path, QMessageBox.Ok)
+            QMessageBox.information(self, "Open complete", "Project loaded:" + file_path, QMessageBox.Ok)
             return True
         except Exception as e:
-            QMessageBox.warning(self, "打开文件失败", "无法打开文件:" + file_path, QMessageBox.Ok)
+            QMessageBox.warning(self, "Open project failed", "Failed to open serval file:" + file_path, QMessageBox.Ok)
             return False
 
 

@@ -20,7 +20,7 @@ class ConfigPane(QWidget, Ui_config):
         self.setupUi(self)
         self.folder_list=[]
         self.picture_path=[]
-        self.proj_name="新项目"
+        self.proj_name="New Project"
         self.txtProjname.setText(self.proj_name)
         self.btnAdd.clicked.connect(self.add_folder)
         self.pic_num=0
@@ -44,7 +44,7 @@ class ConfigPane(QWidget, Ui_config):
                 self.picture_path.append(new_path)
         print(self.picture_path)
     def add_folder(self):
-        dir_path = QFileDialog.getExistingDirectory(self, "选择图片所在目录", "C:/Users")
+        dir_path = QFileDialog.getExistingDirectory(self, "Select the picture folder", "C:/")
         print(dir_path)
         if dir_path not in self.folder_list:
             self.folder_list.append(dir_path)
@@ -52,19 +52,13 @@ class ConfigPane(QWidget, Ui_config):
             dir_path_item.setText(dir_path)
             self.listWidget.addItem(dir_path_item)
             self.search_pic(dir_path)
-            self.lblstatus.setText("已选定"+str(self.pic_num)+"个图片")
-            print("当前已选定"+str(self.pic_num)+"个图片")
+            self.lblstatus.setText(str(self.pic_num)+"pictures selected.")
     def StartingAnno(self):
-        print("starting annotations")
         actionItems=self.action_list.action_items
         userAction=self.action_list.user_actions
         self.proj_name=self.txtProjname.text()
-        print(actionItems)
-        print(userAction)
         for k,v in userAction.items():
-            print(k,v)
             self.aim.appendNewLabel(v.action_label)
-        print(self.aim.labels)
         self.ConfigStartAnnotation.emit()
 
 

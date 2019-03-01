@@ -41,7 +41,7 @@ class AnnotatorPane(QWidget, Ui_AnnotatorPane):
         self.graphicsView.setRenderHint(QPainter.Antialiasing)
         self.graphicsView.setScene(self.scene)
         self.listViewImageNames.setModel(self.imageListModel)
-        print("UI_loaded")
+        #print("UI_loaded")
         self.aim.annotationChange.connect(self.annotationChangedForImage)
         self.listViewImageNames.doubleClicked.connect(self.loadImageByFileIndex)
         self.listViewImageNames.activated.connect(self.listViewIndexMoved)
@@ -72,7 +72,7 @@ class AnnotatorPane(QWidget, Ui_AnnotatorPane):
         reader.setAutoTransform(True)
         loadImage=reader.read()
         if loadImage is None:
-            QMessageBox.information(QGuiApplication.applicationDisplayName(),"无法载入文件:"+imagePath)
+            QMessageBox.information(QGuiApplication.applicationDisplayName(),"Failed to load file:"+imagePath)
             return False
         iw=loadImage.width()
         ih=loadImage.height()
@@ -254,7 +254,7 @@ class AnnotatorPane(QWidget, Ui_AnnotatorPane):
             self.aim.updateAnnotationByString(annotationStringList)
     def showSupportedFormats(self):
         fmts=", ".join(SUPPORTED_FILE_FORMATS_LIST)
-        QMessageBox.information(self,"支持的文件格式",fmts,QMessageBox.Ok)
+        QMessageBox.information(self,"File formats supported:",fmts,QMessageBox.Ok)
     def imageScaled(self):
         self.scene.resetCursorPos()
         self.graphicsView.update()

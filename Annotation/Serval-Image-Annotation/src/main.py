@@ -65,10 +65,10 @@ class MainWindow(QMainWindow,Ui_MainWindow):
             self.proj_name=self.configPane.proj_name
         if len(self.picture_path)<1:
             print(self.picture_path)
-            QMessageBox.information(self,"提示","没有选择图片！请重新选择",QMessageBox.Ok)
+            QMessageBox.information(self,"Alert","No pictures selected!",QMessageBox.Ok)
             return
         if len(self.aim.labels)<1:
-            QMessageBox.information(self, "提示", "没有添加标签！请重新选择", QMessageBox.Ok)
+            QMessageBox.information(self, "Alert", "No labels added!", QMessageBox.Ok)
             return
 
         self.annoPane.setImageFileList(self.picture_path)
@@ -76,12 +76,12 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.stack.setCurrentWidget(self.annoPane)
         self.annoPane.loadFirstImage()
     def exitApplication(self):
-        reply = QMessageBox.question(self, ("确认退出"),
-                                      ("是否要退出程序？未保存的进度都将丢失"),QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+        reply = QMessageBox.question(self, ("Confirm Exit"),
+                                      ("Are you sure you want to exit the Application? All unsaved progess will be lost."),QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         if reply == QMessageBox.Yes:
             QApplication.exit();
     def OpenServalFile(self):
-        file_path_diag=QFileDialog.getOpenFileName(self, "打开文件", "C:/Users/",
+        file_path_diag=QFileDialog.getOpenFileName(self, "Open file", "C:/Users/",
                                                 "serval files (*.serval);;all files(*.*)")
         file_path=file_path_diag[0]
         print(file_path)
@@ -89,12 +89,13 @@ class MainWindow(QMainWindow,Ui_MainWindow):
             with open(file_path,encoding='utf-8') as f:
                 file_read=f.read()
         except Exception as e:
-            QMessageBox.warning(self, "打开文件失败", "无法打开文件:" + file_path, QMessageBox.Ok)
+            if len(file_path)!=0:
+                QMessageBox.warning(self, "Open file failed!", "Cannot open file:" + file_path, QMessageBox.Ok)
             return False
         serval_content=T.decrypt(DEF.ENCRYPT_KEY,file_read)
         print(serval_content)
         if T.validateHeader(serval_content)!=0:
-            QMessageBox.warning(self, "校验失败", "不是合法的标注文件:" + file_path, QMessageBox.Ok)
+            QMessageBox.warning(self, "Validation failed!", "Not a legal serval file:" + file_path, QMessageBox.Ok)
             return False
         self.aim.initWithSerializeString(serval_content)
         print(self.aim.imgAnnos)
@@ -103,8 +104,8 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.stack.setCurrentWidget(self.configPane)
     def SaveAll(self):
         if self.SaveServalFile():
-            reply = QMessageBox.question(self, ("是否保存工程文件"),
-                                         ("工程文件仅包含文件列表和标签，便于继续下一次标注"), QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            reply = QMessageBox.question(self, ("Save the project file?"),
+                                         ("A project file contains labels and paths only, you can use it to continue the project."), QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
             if reply==QMessageBox.Yes:
                 if self.SaveProjFile():
                     self.json_dump()
@@ -118,8 +119,8 @@ class MainWindow(QMainWindow,Ui_MainWindow):
     def OpenAll(self):
         proj=self.OpenProjFile()
         if proj:
-            reply = QMessageBox.question(self, ("是否打开标签文件"),
-                                         ("若有标签文件则可以加载已标注的结果"), QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            reply = QMessageBox.question(self, ("Open a serval file?"),
+                                         ("You can load the annotated results with a serval file."), QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
             if reply == QMessageBox.Yes:
                 serval=self.OpenServalFile()
             self.startAnnotationRequested()
@@ -127,7 +128,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
     def OpenProjFile(self):
         import json
         #proj_dict = {'images': self.picture_path, 'labels': self.aim.getLabels()}
-        file_path_diag = QFileDialog.getOpenFileName(self, "打开工程文件", "C:/Users/",
+        file_path_diag = QFileDialog.getOpenFileName(self, "Open project file", "C:/Users/",
                                                      "json files (*.json);;all files(*.*)")
         file_path = file_path_diag[0]
         try:
@@ -138,15 +139,15 @@ class MainWindow(QMainWindow,Ui_MainWindow):
                 self.picture_path=proj_dict['images']
                 self.aim.labels=proj_dict['labels']
                 self.load_proj = True
-            QMessageBox.information(self, "打开完成", "已载入工程:" + file_path, QMessageBox.Ok)
+            QMessageBox.information(self, "Open complete!", "Project loaded:" + file_path, QMessageBox.Ok)
             return True
         except Exception as e:
-            QMessageBox.warning(self, "打开文件失败", "无法打开文件:" + file_path, QMessageBox.Ok)
+            QMessageBox.warning(self, "Open failed!", "Can't open file:" + file_path, QMessageBox.Ok)
             return False
     def SaveProjFile(self):
         import json
         proj_dict={'images':self.picture_path,'labels':self.aim.getLabels()}
-        file_path_diag = QFileDialog.getSaveFileName(self, "保存工程文件", "C:/Users/"+self.proj_name,
+        file_path_diag = QFileDialog.getSaveFileName(self, "Save project file", "C:/Users/"+self.proj_name,
                                                      "json files (*.json);;all files(*.*)")
         file_path = file_path_diag[0]
         try:
@@ -155,14 +156,14 @@ class MainWindow(QMainWindow,Ui_MainWindow):
             file_save.write(data_to_write)
             file_save.close()
             self.recent_dict[self.proj_name]['proj']=file_path
-            QMessageBox.information(self,"保存完成","文件已保存到:"+file_path,QMessageBox.Ok)
+            QMessageBox.information(self,"File Saved","Project saved to:"+file_path,QMessageBox.Ok)
             return True
         except Exception as e:
-            QMessageBox.warning(self, "保存文件失败", "无法打开文件:" + file_path, QMessageBox.Ok)
+            QMessageBox.warning(self, "Saving failed!", "Can't open file to save:" + file_path, QMessageBox.Ok)
             return False
 
     def SaveServalFile(self):
-        file_path_diag = QFileDialog.getSaveFileName(self, "保存标注文件", "C:/Users/"+self.proj_name,
+        file_path_diag = QFileDialog.getSaveFileName(self, "Save serval file", "C:/Users/"+self.proj_name,
                                                 "serval files (*.serval);;all files(*.*)")
         #print(file_path)
         file_path=file_path_diag[0]
@@ -174,11 +175,11 @@ class MainWindow(QMainWindow,Ui_MainWindow):
             file_save.write(data_encrypt)
             file_save.close()
             self.recent_dict[self.proj_name]={'serval':file_path}
-            QMessageBox.information(self,"保存完成","文件已保存到:"+file_path,QMessageBox.Ok)
+            QMessageBox.information(self,"File Saved","Serval saved to:"+file_path,QMessageBox.Ok)
             return True
         except Exception as e:
             print(e)
-            QMessageBox.warning(self, "保存文件失败", "无法打开文件:" + file_path, QMessageBox.Ok)
+            QMessageBox.warning(self, "Saving failed", "Can't open file to save:" + file_path, QMessageBox.Ok)
             return False
 
 
