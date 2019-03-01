@@ -65,7 +65,7 @@ See [User Manual](http://www.giai.tech)
 
 Project initialized by Generalized Intelligence
 
-Distributed under the BSD 3-Clause license. See LICENSE for more information.
+Distributed under the GPL-v3 license. See LICENSE for more information.
 
 # Contribute
 
@@ -137,7 +137,7 @@ python3 main.py
 # Meta
 
 泛化智能 Generalized Intelligence 出品。
-本项目通过 BSD 3-Clause 协议发布及传播。详情见 LICENSE。
+本项目通过 GPL-v3 协议发布及传播。详情见 LICENSE。
 
 # Contribute
 
