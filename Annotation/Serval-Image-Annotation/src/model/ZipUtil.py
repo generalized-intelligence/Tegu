@@ -54,6 +54,7 @@ def regenerate_serval(serval_dict:dict):
             str_line=get_path_folder(path)+'/'+key+':'+anno
             list_to_write.append(str_line)
     serval_new='\n'.join(list_to_write)
+    serval_new+='\n'
     serval_new_header=addHeader(serval_new)
     return serval_new_header
 def write_folder_from_dict(path:str, serval_dict:dict):
