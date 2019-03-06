@@ -10,7 +10,7 @@ class ZipPanel(QWidget,Ui_zippanel):
         super(ZipPanel, self).__init__(parent)
         self.setupUi(self)
         self.serval_dict={}
-        self.txt_display="本功能需要使用7z，请指定正确的7z.exe位置\n"
+        self.txt_display="This function requires 7z, please show the correct path of 7z.exe\n"
         self.ziptool_Path=""
         self.zip_Path=""
         self.btnServal.clicked.connect(self.select_serval)
@@ -20,22 +20,22 @@ class ZipPanel(QWidget,Ui_zippanel):
         self.btnStart.clicked.connect(self.zip_pack)
         self.updatingTxtDisplay.emit()
     def select_save(self):
-        file_path_diag = QFileDialog.getSaveFileName(self, "保存文件", "C:/Users/",
+        file_path_diag = QFileDialog.getSaveFileName(self, "Save File", "C:/Users/",
                                                      "7z files (*.7z);;all files(*.*)")
         file_path = file_path_diag[0]
         if file_path != "":
             self.zip_Path = file_path
-            self.txt_display += "将保存到以下位置：" + file_path + '\n'
+            self.txt_display += "Saving to the following path：" + file_path + '\n'
             self.updatingTxtDisplay.emit()
     def zip_pack(self):
         if self.zip_Path=="":
-            QMessageBox.warning(self, "无法打包", "请先选择保存位置！" , QMessageBox.Ok)
+            QMessageBox.warning(self, "Packing failed", "Please select the save path first!" , QMessageBox.Ok)
             return
         elif self.ziptool_Path=="":
-            QMessageBox.warning(self, "无法打包", "请先选择7z.exe程序位置！", QMessageBox.Ok)
+            QMessageBox.warning(self, "Packing failed", "Please select the 7z.exe path first!", QMessageBox.Ok)
             return
         elif len(self.serval_dict.keys())<=1:
-            QMessageBox.warning(self, "无法打包", "请先打开有效的serval文件！", QMessageBox.Ok)
+            QMessageBox.warning(self, "Packing failed", "请先打开有效的serval文件！", QMessageBox.Ok)
             return
         ZP = Ziputil(self.ziptool_Path, self.zip_Path)
         temp_path=os.path.splitext(self.zip_Path)[0]+"_folder"

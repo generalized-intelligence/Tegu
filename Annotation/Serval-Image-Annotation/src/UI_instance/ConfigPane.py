@@ -52,7 +52,7 @@ class ConfigPane(QWidget, Ui_config):
             dir_path_item.setText(dir_path)
             self.listWidget.addItem(dir_path_item)
             self.search_pic(dir_path)
-            self.lblstatus.setText(str(self.pic_num)+"pictures selected.")
+            self.lblstatus.setText(str(self.pic_num)+" pictures selected.")
     def StartingAnno(self):
         actionItems=self.action_list.action_items
         userAction=self.action_list.user_actions
