@@ -1,0 +1,130 @@
+{
+    "213langqiaojiwei_213langqiaojiwei_20171024103317": {
+        "subset": "training",
+        "num_frames": 90486,
+        "url": "http://fake_site/213langqiaojiwei_213langqiaojiwei_20171024103317",
+        "duration": 3620.9610000000002,
+        "resolution": "1920x1080",
+        "annotations": [
+            {
+                "segment": [
+                    2.881210264571315,
+                    199.36374358464292
+                ],
+                "label": "1"
+            }
+        ]
+    },
+    "214langqiaojiwei_214langqiaojiwei_20171019102631": {
+        "subset": "training",
+        "num_frames": 90420,
+        "url": "http://fake_site/214langqiaojiwei_214langqiaojiwei_20171019102631",
+        "duration": 3617.526,
+        "resolution": "1920x1080",
+        "annotations": [
+            {
+                "segment": [
+                    0.4000802919708029,
+                    2950.792193430657
+                ],
+                "label": "1"
+            }
+        ]
+    },
+    "214langqiaojiwei_214langqiaojiwei_20171024140609": {
+        "subset": "training",
+        "num_frames": 90428,
+        "url": "http://fake_site/214langqiaojiwei_214langqiaojiwei_20171024140609",
+        "duration": 3617.846,
+        "resolution": "1920x1080",
+        "annotations": []
+    },
+    "215langqiaojiwei_215langqiaojiwei_20171024000647": {
+        "subset": "training",
+        "num_frames": 90467,
+        "url": "http://fake_site/215langqiaojiwei_215langqiaojiwei_20171024000647",
+        "duration": 3619.531,
+        "resolution": "1920x1080",
+        "annotations": [
+            {
+                "segment": [
+                    1461.2635625476692,
+                    3619.571009406745
+                ],
+                "label": "1"
+            }
+        ]
+    },
+    "223langqiaojiwei_223langqiaojiwei_20171025223445": {
+        "subset": "training",
+        "num_frames": 90429,
+        "url": "http://fake_site/223langqiaojiwei_223langqiaojiwei_20171025223445",
+        "duration": 3617.981,
+        "resolution": "1920x1080",
+        "annotations": [
+            {
+                "segment": [
+                    1781.364230987847,
+                    3618.021009078946
+                ],
+                "label": "1"
+            }
+        ]
+    },
+    "225langqiaojiwei_225langqiaojiwei_20171024121049": {
+        "subset": "training",
+        "num_frames": 90493,
+        "url": "http://fake_site/225langqiaojiwei_225langqiaojiwei_20171024121049",
+        "duration": 3620.551,
+        "resolution": "1920x1080",
+        "annotations": [
+            {
+                "segment": [
+                    129.34968873835544,
+                    2771.556136087874
+                ],
+                "label": "1"
+            }
+        ]
+    },
+    "232langqiaojiwei_232langqiaojiwei_20171031023613": {
+        "subset": "training",
+        "num_frames": 90450,
+        "url": "http://fake_site/232langqiaojiwei_232langqiaojiwei_20171031023613",
+        "duration": 3618.821,
+        "resolution": "1920x1080",
+        "annotations": [
+            {
+                "segment": [
+                    0.3200726147042565,
+                    3618.861009076838
+                ],
+                "label": "1"
+            }
+        ]
+    },
+    "236langqiaojiwei_236langqiaojiwei_20171024090948": {
+        "subset": "training",
+        "num_frames": 90385,
+        "url": "http://fake_site/236langqiaojiwei_236langqiaojiwei_20171024090948",
+        "duration": 3616.241,
+        "resolution": "1920x1080",
+        "annotations": []
+    },
+    "237langqiaojiwei_237langqiaojiwei_20171030183511": {
+        "subset": "training",
+        "num_frames": 90494,
+        "url": "http://fake_site/237langqiaojiwei_237langqiaojiwei_20171030183511",
+        "duration": 3620.5699999999997,
+        "resolution": "1920x1080",
+        "annotations": [
+            {
+                "segment": [
+                    317.2309714456207,
+                    3604.2463480451743
+                ],
+                "label": "1"
+            }
+        ]
+    }
+}
