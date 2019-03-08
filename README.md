@@ -3,14 +3,43 @@
 
 [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-## A Machine Learning Toolbox for Non-ML Programmer
-## 为非机器学习工程师设计的机器学习工具
+## Use Machine Learning Right Now In Your Project
+## 即刻在你的项目中使用机器学习
 
 Tegu Core is the core component of Tegu, which provides an encapsulation of some state-of-the-art deep learning models of computer vision, and its APIs are called by the Tegu GUI components. You can use Tegu Core to provide some deep learning functions in your own Python projects with only a few codes.
 
 Tegu Core 是 Tegu 的核心组件，提供了对一些当前最佳实践（State of the Art）的计算机视觉深度学习模型的封装，与Tegu GUI配合使用。若您需要在Python项目中引入深度学习功能，您可以将Tegu Core与您的项目一起配合使用。
 
 ---
+
+## 30s to start training car detection model
+For deep learning tasks, Tegu uses the **Network_Model** class to manage training tasks, and uses the **Network_Dataloader** class to manage data sets.
+
+1. Download [car detection model](https://fanhuaai-my.sharepoint.cn/:u:/g/personal/dongshuo_giai_tech/EYzwu6k3GMVDlcrlhe3R6WIBOqcBr5t_eTeX3Uz5uO-0sQ?e=vVkmXf) and unzip.
+2. First import the API library of the SSD300 image detection model.
+```python
+from Network.SSD300.API import SSD_Model, SSD_DataLoaders
+```
+3. Create **SSD_Model** and **SSD_Dataloader** instances.
+```python
+m = SSD_Model(class_count=2, base_lr=0.0004)
+d = SSD_DataLoader(anno_path=r"annotation/path", data_path=r"dataset/path",batch_size=32)
+```
+4. Set the Dataset for **SSD_Model**.
+```python
+m.set_dataset(d)
+```
+5. Start training, set the epoch to 100 rounds, and save every 20 rounds.
+```python
+epoch = 100
+for i in range(epoch):
+    train_info = m.train()
+    print(train_info)   #{'loss':[3.3914230046448886], 'val_loss':[3.8560243606567384]}
+    if (i+1)%20==0 or i+1==epoch:
+        save_path = "ssd_model{}.h5".format(str(i).zfill(3))
+        m.model.save(save_path)
+```
+For more usage, see `Example`.
 
 ## Quick Start
 
@@ -24,6 +53,7 @@ pip3 install -r requirements.txt
 ```
 
 5. For the usage of Tegu Core API, see `Example` Folder.
+
 For Image Recognition and Video Classification, we have developed a set of tools to process and clean up the datasets. You may use [Tegu Image Annotation](http://www.giai.tech) and [Tegu Video Annotation](http://www.giai.tech) to process your dataset.
 
 ## File Structure
@@ -38,6 +68,8 @@ For Image Recognition and Video Classification, we have developed a set of tools
 * Image Recognition
 * Facial Recognition (build feature library, and recognize)
 * License Plate Recognition
+
+HTTP API is available for Image Recognition, Facial Recognition and License Plate Recognition
 
 ## Relevant Projects
 
@@ -71,6 +103,35 @@ Distributed under the BSD 3-Clause license. See LICENSE for more information.
 Please follow CONTRIBUTING.md
 
 ---
+
+## 30秒开始训练车辆检测模型
+对于深度学习任务，Tegu 使用 **网络名_Model** 类来管理训练任务，使用 **网络名_Dataloader** 类来管理数据集。
+
+1. 下载 [车辆检测数据集](https://fanhuaai-my.sharepoint.cn/:u:/g/personal/dongshuo_giai_tech/EYzwu6k3GMVDlcrlhe3R6WIBOqcBr5t_eTeX3Uz5uO-0sQ?e=vVkmXf) 并解压缩。
+2. 首先 import SSD300 图像检测模型的 API 库。
+```python
+from Network.SSD300.API import SSD_Model, SSD_DataLoaders
+```
+3. 创建 **SSD_Model** 和 **SSD_Dataloader** 实例。
+```python
+m = SSD_Model(class_count=2, base_lr=0.0004)
+d = SSD_DataLoader(anno_path=r"annotation/path", data_path=r"dataset/path",batch_size=32)
+```
+4. 为 **SSD_Model** 设置 Dataset。
+```python
+m.set_dataset(d)
+```
+5. 开始训练，设置 epoch 为 100 轮，并且每 20 轮保存一次。
+```python
+epoch = 100
+for i in range(epoch):
+    train_info = m.train()
+    print(train_info)   #{'loss':[3.3914230046448886],'val_loss':[3.8560243606567384]}
+    if (i+1)%20==0 or i+1==epoch:
+        save_path = "ssd_model{}.h5".format(str(i).zfill(3))
+        m.model.save(save_path)
+```
+查看更多应用，请参见 `Example`。
 
 ## 快速开始
 1. 首先请安装 [Python3](https://www.python.org) 以及 [pip3](https://pip.pypa.io/en/stable/installing)。
