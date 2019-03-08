@@ -23,7 +23,7 @@ from Network.SSD300.API import SSD_Model, SSD_DataLoaders
 3. Create **SSD_Model** and **SSD_Dataloader** instances.
 ```python
 m = SSD_Model(class_count=2, base_lr=0.0004)
-d = SSD_DataLoader(anno_path=r"annotation/path", data_path=r"dataset/path",batch_size=32)
+d = SSD_DataLoader(anno_path=r"dataset/save/path/car_annotation.serval", data_path=r"dataset/save/path/trainset",batch_size=16)
 ```
 4. Set the Dataset for **SSD_Model**.
 ```python
@@ -115,7 +115,7 @@ from Network.SSD300.API import SSD_Model, SSD_DataLoaders
 3. 创建 **SSD_Model** 和 **SSD_Dataloader** 实例。
 ```python
 m = SSD_Model(class_count=2, base_lr=0.0004)
-d = SSD_DataLoader(anno_path=r"annotation/path", data_path=r"dataset/path",batch_size=32)
+d = SSD_DataLoader(anno_path=r"dataset/save/path/car_annotation.serval", data_path=r"dataset/save/path/trainset",batch_size=16)
 ```
 4. 为 **SSD_Model** 设置 Dataset。
 ```python
