@@ -2,9 +2,9 @@
 
 Tegu is a rapid development toolkit, designed for non-ML programmers to develop machine learning enabled solutions. Therefore, the GUI component of the toolkit is crucial. We would like to simplify the training process to the greatest extent. In some case, we even provide training-free solutions for machine learning tasks. With HTTP protocols, users do not need to use any machine learning related programming. Any languages that are compatible with HTTP protocols can be used to communicate with Tegu.
 
-The project is consist of two parts: Network and GUI.
+The project is consist of two parts: Tegu-core and GUI.
 
-Network: this part currently has implementations in image recognition, video classification, facial recognition, and license plate recognition.
+Tegu-core: this part currently has implementations in image recognition, video classification, facial recognition, and license plate recognition.
 
 GUI: this part contains the GUI for existing networks and HTTP API.
 
@@ -23,11 +23,9 @@ Welcome to Tegu and we would like to thank you for your contribution in advance!
 
 ### New Features
 
-There are two major components in Tegu, GUI and Tegu-core.
+There are two major components in Tegu, GUI and Tegu-core. This Repo focus on Tegu-core.
 
-Tegu-core can be found in the `\Network` folder, including realizations for different use cases. 
-
-The GUI component is critical to Tegu, because one of the main goals of Tegu is to minimize the amount of coding required in machine learning development. The GUI component can be found in the `\GUI` folder. It includes the user interfaces for different features (such as training and prediction for image detection) or different realizations of the same feature, as well as the demonstration of outcomes delivered by the feature (for example, real-time training loss).
+Tegu-core is designed to allow non-ML developers to integrate the ML functions they need into their projects as quickly as possible. So we divide the different ML networks into modules and package them into API.py. Developers can use the functions with only a few code, such as training a network by adjusting a small number of useful hyperparameters; Using themselves or others trained models for prediction.
 
 If you would like to help us realize new features:
 
@@ -64,9 +62,9 @@ If you would like to help us realize new features:
 Feel free to ask any questions at [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge), someone will be able to point you to the right direction.
 
 
-Tegu 大致分成两个部分， GUI 和 Tegu-core 部分。Tegu-core 部分主要集中在 `\Network` 文件夹下，包含不同功能的实现，或者相同功能的不同实现。
+Tegu 大致分成两个部分， GUI 和 Tegu-core 部分。此 Repo 是 Tegu-core 部分。
 
-Tegu 的一大目标就是让用户尽可能少的接触代码，所以我们还需要 GUI 部分来让 Tegu 变得更加易用。 GUI 部分集中在 `\GUI` 文件夹下，包括对每个功能的图形化界面的操作（如图像检测的训练和预测），也包含对使用期间输出信息的展示（如训练时显示实时的 loss 等）。
+Tegu-core 是为了让非机器学习开发者能够尽快将所需的机器学习功能集成到自己的项目。所以我们将不同的机器学习任务的实现分成各个模块并将其封装成 API ，开发者可以凭借非常少的代码就能够使用相应功能，比如通过调整少量并有用的超参数来训练网络，使用自己或者其他人训练好的模型进行预测。
 
 如果你想帮助我们实现新的功能:
 
@@ -127,21 +125,3 @@ It would be great if testing is done before submitting the PR. If possible, plea
 
 在提交之前最好完成测试，如果可以的话给出测试用例是再好不过的了。
 
----
-
-### Help with Compiling
-
-As new libraries and infrastructures may be needed for new features, we may need to change how we release the software in the future. One of the main goals of Tegu is to minimize the amount of coding required for machine learning development. Therefore, providing executable GUI-based software is critical.
-
-Currently, Tegu supports Windows 10. If you have found out the existing executable software is not in sync with the code-only software, feel free to provide:
-
-* Executable file. You may contact us at [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) to upload your packed and compressed executable file and testing environment.
-*  Packed scripts and user manuals of any form.
-
-
-由于新的应用场景很可能需要新的框架或者包，我们可能需要不断更新 Release 方式，由于 Tegu 的一大目标是让用户少接触代码，所以能够生成一个纯 GUI 的可执行程序是非常必要的。
-
-目前 Tegu 支持 Windows 10 环境，如果你发现目前提供的可执行程序的版本比纯代码版本落后，我们欢迎并感谢你提供：
-
-* 打包后的可执行程序文件。你可以联系我们 [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) 上传你打包过后的压缩文件，并请提供你测试的系统环境。
-* 打包的脚本，和任何形式的说明文档。
