@@ -22,8 +22,6 @@ def ssd_train():
             metrics_info = m.metrics(path)
             print(metrics_info)
 
-
-
 if __name__=='__main__':
     ssd_train()
    
