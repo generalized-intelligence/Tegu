@@ -6,9 +6,9 @@
 ## Use Machine Learning Right Now In Your Project
 ## 即刻在你的项目中使用机器学习
 
-Tegu Core is the core component of Tegu, which provides an encapsulation of some state-of-the-art deep learning models of computer vision, and its APIs are called by the Tegu GUI components. You can use Tegu Core to provide some deep learning functions in your own Python projects with only a few codes.
+Tegu-core is the core component of Tegu, which provides an encapsulation of some state-of-the-art deep learning models of computer vision, and its APIs are called by the Tegu GUI components. You can use Tegu-core to provide some deep learning functions in your own Python projects with only a few codes.
 
-Tegu Core 是 Tegu 的核心组件，提供了对一些当前最佳实践（State of the Art）的计算机视觉深度学习模型的封装，与Tegu GUI配合使用。若您需要在Python项目中引入深度学习功能，您可以将Tegu Core与您的项目一起配合使用。
+Tegu-core 是 Tegu 的核心组件，提供了对一些当前最佳实践（State of the Art）的计算机视觉深度学习模型的封装，与Tegu GUI配合使用。若您需要在Python项目中引入深度学习功能，只需要很少的代码，您就可以将Tegu-core与您的项目一起配合使用。
 
 ---
 
@@ -52,14 +52,14 @@ For more usage, see `Example`.
 pip3 install -r requirements.txt
 ```
 
-5. For the usage of Tegu Core API, see `Example` Folder.
+5. For the usage of Tegu-core API, see `Example` Folder.
 
 For Image Recognition and Video Classification, we have developed a set of tools to process and clean up the datasets. You may use [Tegu Image Annotation](http://www.giai.tech) and [Tegu Video Annotation](http://www.giai.tech) to process your dataset.
 
 ## File Structure
 
 * Network/: Neural Networks, called by scripts in GUI/
-* Example/: Samples for how to use Tegu Core. 
+* Example/: Samples for how to use Tegu-core. 
 * Util/: Utility used in the project
 
 ## Existing Features
@@ -142,7 +142,7 @@ for i in range(epoch):
 ```sh
 pip3 install -r requirements.txt
 ```
-5. Tegu Core 模型API的用法，可以参照`Example`文件夹中的示例代码。
+5. Tegu-core 模型API的用法，可以参照`Example`文件夹中的示例代码。
 
 对于图像检测和视频分类任务，我们使用自己的格式处理数据集，您可以使用 [Tegu 图像标注软件](http://www.giai.tech)，和 [Tegu 视频标注软件](http://www.giai.tech) 来制作数据集。
 

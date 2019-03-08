@@ -25,7 +25,7 @@ Welcome to Tegu and we would like to thank you for your contribution in advance!
 
 There are two major components in Tegu, GUI and Tegu-core.
 
-Tegu-core can be found in the `\Network` folder, including realizations for different use cases. Tegu-core also contains codes for HTTP API and external communication.
+Tegu-core can be found in the `\Network` folder, including realizations for different use cases. 
 
 The GUI component is critical to Tegu, because one of the main goals of Tegu is to minimize the amount of coding required in machine learning development. The GUI component can be found in the `\GUI` folder. It includes the user interfaces for different features (such as training and prediction for image detection) or different realizations of the same feature, as well as the demonstration of outcomes delivered by the feature (for example, real-time training loss).
 
@@ -64,7 +64,7 @@ If you would like to help us realize new features:
 Feel free to ask any questions at [![Join the chat at https://gitter.im/Tegutalk/community](https://badges.gitter.im/Tegutalk/community.svg)](https://gitter.im/Tegutalk/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge), someone will be able to point you to the right direction.
 
 
-Tegu 大致分成两个部分， GUI 和 Tegu-core 部分。Tegu-core 部分主要集中在 `\Network` 文件夹下，包含不同功能的实现，或者相同功能的不同实现。 Tegu-core 部分包含 HTTP API 与外界通信。
+Tegu 大致分成两个部分， GUI 和 Tegu-core 部分。Tegu-core 部分主要集中在 `\Network` 文件夹下，包含不同功能的实现，或者相同功能的不同实现。
 
 Tegu 的一大目标就是让用户尽可能少的接触代码，所以我们还需要 GUI 部分来让 Tegu 变得更加易用。 GUI 部分集中在 `\GUI` 文件夹下，包括对每个功能的图形化界面的操作（如图像检测的训练和预测），也包含对使用期间输出信息的展示（如训练时显示实时的 loss 等）。
 
