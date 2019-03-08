@@ -125,4 +125,3 @@ model_file/20180408-102900/*
 *.pyc
 */__pycache__
 *.zip
-dnn/
