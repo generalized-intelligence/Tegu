@@ -118,6 +118,16 @@ Please follow CONTRIBUTING.md
 对于深度学习任务，Tegu 使用 **网络名_Model** 类来管理训练任务，使用 **网络名_Dataloader** 类来管理数据集。
 
 1. 下载 [车辆检测数据集](https://fanhuaai-my.sharepoint.cn/:u:/g/personal/dongshuo_giai_tech/EYzwu6k3GMVDlcrlhe3R6WIBOqcBr5t_eTeX3Uz5uO-0sQ?e=vVkmXf) 并解压缩。
+```cmd
+|CarDataset/
+    |--trainset/  #Images to train the model.
+        |--xxx.jpg
+        ...
+    |--testset/  #Images to test your model.
+        |--xxx.jpg
+        ...
+    |car_annotation.serval  #The annotation file contains the annotations for the images in the trainset directory.
+```
 2. 首先 import SSD300 图像检测模型的 API 库。
 ```python
 from Network.SSD300.API import SSD_Model, SSD_DataLoaders
