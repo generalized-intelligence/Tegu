@@ -13,7 +13,7 @@ def ssd_train():
         train_info = m.train()
         print('Epoch:{}, history:{}'.format(i,train_info.history))
 
-        if i%20==0: 
+        if (i+1)%20==0 or i+1==epoch:
             save_path = "ssd_model{}.h5".format(str(i).zfill(3))
             m.model.save(save_path)
             print('Saved')
