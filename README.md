@@ -15,7 +15,17 @@ Tegu-core 是 Tegu 的核心组件，提供了对一些当前最佳实践（Stat
 ## 30s to start training car detection model
 For deep learning tasks, Tegu uses the **Network_Model** class to manage training tasks, and uses the **Network_Dataloader** class to manage data sets.
 
-1. Download [car detection model](https://fanhuaai-my.sharepoint.cn/:u:/g/personal/dongshuo_giai_tech/EYzwu6k3GMVDlcrlhe3R6WIBOqcBr5t_eTeX3Uz5uO-0sQ?e=vVkmXf) and unzip.
+1. Download [car detection dataset](https://fanhuaai-my.sharepoint.cn/:u:/g/personal/dongshuo_giai_tech/EYzwu6k3GMVDlcrlhe3R6WIBOqcBr5t_eTeX3Uz5uO-0sQ?e=vVkmXf) and unzip, the dataset contains:
+```cmd
+|CarDataset/
+    |--trainset/  #Images to train the model.
+        |--xxx.jpg
+        ...
+    |--testset/  #Images to test your model.
+        |--xxx.jpg
+        ...
+    |car_annotation.serval  #The annotation file contains the annotations for the images in the trainset directory.
+```
 2. First import the API library of the SSD300 image detection model.
 ```python
 from Network.SSD300.API import SSD_Model, SSD_DataLoaders
