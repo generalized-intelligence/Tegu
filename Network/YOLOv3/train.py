@@ -103,7 +103,7 @@ def create_model(input_shape, anchors, num_classes, load_pretrained=True, freeze
         model_body.load_weights(weights_path, by_name=True, skip_mismatch=True)
         print('Load pretrained sucess.')
         assert freeze_body>=0 and freeze_body<len(model_body.layers), 'freeze_body must >= 0 and < len(model_body.layers)'
-        for i in freeze_body:
+        for i in range(freeze_body):
             model_body.layers[i].trainable = False
         print('Freeze {} layers.'.format(freeze_body))
         

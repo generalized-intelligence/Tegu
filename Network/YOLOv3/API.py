@@ -30,6 +30,7 @@ from PIL import Image, ImageFont, ImageDraw
 
 import cv2
 import random
+from Util.decrypt import decrypt_txt_file
 
 
 class YOLOv3_Model:
@@ -46,6 +47,7 @@ class YOLOv3_Model:
         '''
         self.YOLO_ANCHORS = np.array(((10,13), (16,30), (33,23), (30,61),
                                            (62,45), (59,119), (116,90), (156,198), (373,326)))
+        self.class_names = None                                
         self.log_dir = 'D:/logs/000/'
         self.model_path=None
         self.sess = K.get_session()
@@ -143,7 +145,7 @@ class YOLOv3_Model:
         return history
 
 
-    def predict(self,img_path,model_path=None):
+    def predict(self,img_path,model_path=None, anno_path=None):
         '''
         Predict one image.
         Return: [label, class_name, score, (left, top), (right, bottom)]
@@ -152,10 +154,18 @@ class YOLOv3_Model:
             img_path -- The image path to be predicted.
             model_path -- Yolov3 model path for prediction.
         '''
+        if self.class_names is None:
+            assert anno_path is not None, "Set class names first."
+            _, contents = decrypt_txt_file(anno_path)
+            contents = contents.split('\n')
+            self.class_names = contents[1].split(',')
+            self.class_names = [cn.split(':')[1] for cn in self.class_names]
+
         if(self.evalready==False or not self.model_path==model_path):
             self.model_path=model_path
             self.get_eval_model()          
             print("(re)loading eval/infering model")
+        
         try:
             image=np.asarray(Image.open(img_path)) #.swapaxes(0,1)
         except Exception as e:
@@ -173,6 +183,7 @@ class YOLOv3_Model:
                 self.input_image_shape: [image.shape[1], image.shape[0]],
                 K.learning_phase(): 0
             })
+        image=Image.open(img_path)
         result = []
         for i, c in reversed(list(enumerate(out_classes))):
             if c==0:
@@ -207,8 +218,7 @@ class YOLOv3_Dataloader:
         self.data_path = data_path
         self.anno_path = anno_path
 
-        import Network.YOLOv3.decrypt as decrypt
-        _,content = decrypt.decrypt_txt_file(self.anno_path)
+        _,content = decrypt_txt_file(self.anno_path)
         content=content.split("\n")
         clses=content[1]
         annos=content[2:]

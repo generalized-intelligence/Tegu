@@ -24,6 +24,7 @@ def ssd_predict():
     m = SSD_Model(class_count=2)
     print(m.predict(img_path=r"image/you/want/to/predict", model_path=r"model/path", anno_path=r"annotation/path"))
     #[[label:int, class_name:str, score:double, (xmin, ymin), (xmax, ymax)]]
+    
 if __name__=='__main__':
     ssd_train()
     ssd_predict()
