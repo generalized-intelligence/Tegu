@@ -20,6 +20,7 @@ from Network.SSD300.ssd_training import MultiboxLoss
 from Network.SSD300.ssd_utils import BBoxUtility
 from Util.metrics import evaluate_detections
 from Util.mylogger import MyLogger
+from Util.decrypt import decrypt_txt_file
 
 # %matplotlib inline
 plt.rcParams['figure.figsize'] = (8, 8)
@@ -99,7 +100,7 @@ class SSD_Model:
         self.train_keys = dataset.train_keys
         self.val_keys = dataset.val_keys
         self.class_count = dataset.class_count
-        self.class_names = dataset.calss_names
+        self.class_names = dataset.class_names
         self.gt_boxes = dataset.gt_boxes
         self.dataset.bbox_util = self.bbox_util
         self.data_path = dataset.data_path
@@ -186,7 +187,7 @@ class SSD_Model:
                 cv2.rectangle(img, (rec[0],rec[1]),(rec[2],rec[3]),(255,0,0),thickness=2)
             cv2.imwrite(os.path.join(save_dir,name),img)
 
-    def predict(self,img_array=None,img_path=None, model_path=None,is_metrics=False, visualize_path=None):
+    def predict(self,img_array=None,img_path=None, model_path=None,is_metrics=False, visualize_path=None, anno_path=None):
         '''
         Predict one image.
         Return: 
@@ -199,6 +200,14 @@ class SSD_Model:
             is_metrics -- Is get info to do metrics when training.(False when you just predict image)
             visualize_path -- Visualize path.(Not None if you want to visualize image prediction results)
         '''
+        if model_path is not None:
+            self.model.load_weights(model_path)
+        if self.class_names is None:
+            assert anno_path is not None, "Set class names first."
+            _, contents = decrypt_txt_file(anno_path)
+            contents = contents.split('\n')
+            self.class_names = contents[1].split(',')
+            self.class_names = [cn.split(':')[1] for cn in self.class_names]
         inputs = []
         images = []
         try:
@@ -286,6 +295,7 @@ class SSD_DataLoader(object):
     def __init__(self, anno_path,data_path, bbox_util=None,
                  batch_size=8, 
                  image_shape=(300,300),
+                 do_crop = True,
                  extra_params=None
                  ):
         '''
@@ -298,8 +308,8 @@ class SSD_DataLoader(object):
             image_shape -- The shape of the image to be resized.
             extra_params -- Custom parameter.
         '''
-        self.gt = serval_to_dict(anno_path, data_path)
-        keys = list(gt.keys()).copy()
+        self.gt = self.serval_to_dict(anno_path, data_path)
+        keys = list(self.gt.keys()).copy()
         import random
         random.shuffle(keys)
         num_train = int(round(0.9 * len(keys)))
@@ -309,9 +319,10 @@ class SSD_DataLoader(object):
         self.bbox_util = bbox_util
         self.batch_size = batch_size
         self.data_path = data_path
-        self.train_batches = (len(train_keys)-1)//self.batch_size+1
-        self.val_batches = (len(val_keys)-1)//self.batch_size+1
+        self.train_batches = (len(self.train_keys)-1)//self.batch_size+1
+        self.val_batches = (len(self.val_keys)-1)//self.batch_size+1
         self.image_shape = image_shape
+        self.do_crop = do_crop
         
     
     def generate_train(self):
@@ -378,7 +389,7 @@ class SSD_DataLoader(object):
         '''Extract annotation info and do preprocessing'''
         contents = ''
         self.gt_boxes = {}      #for metrices
-        from Util.decrypt import decrypt_txt_file
+        
         _, contents = decrypt_txt_file(anno_path)
         lines = contents.split('\n')
         self.class_count = len(lines[1].split(','))
@@ -393,7 +404,7 @@ class SSD_DataLoader(object):
             if(len(x)==1) or x[1]=='':
                 continue
             name = x[0]
-            img = cv2.imread(os.path.join(data_dir,name))
+            img = cv2.imread(os.path.join(data_path,name))
             try:
                 width = img.shape[0]
                 height = img.shape[1]

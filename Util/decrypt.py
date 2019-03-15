@@ -9,7 +9,7 @@ def decrypt_txt_file(filepath):
     '''
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
-            content = [l[:-1] for l in f.read()] 
+            content = f.read()
             f.close()
         return True, content
     except (UnicodeDecodeError, ValueError) as e:

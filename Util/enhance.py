@@ -1,29 +1,29 @@
 #TODO: Add reference.
-
-def grayscale(self, rgb):
+import numpy as np
+def grayscale(rgb):
     return rgb.dot([0.299, 0.587, 0.114])
 
-def saturation(self, rgb, saturation_var=0.5):
+def saturation(rgb, saturation_var=0.5):
     gs = grayscale(rgb)
     alpha = 2 * np.random.random() * saturation_var 
     alpha += 1 - saturation_var
     rgb = rgb * alpha + (1 - alpha) * gs[:, :, None]
     return np.clip(rgb, 0, 255)
 
-def brightness(self, rgb, saturation_var=0.5):
+def brightness( rgb, saturation_var=0.5):
     alpha = 2 * np.random.random() * brightness_var 
     alpha += 1 - saturation_var
     rgb = rgb * alpha
     return np.clip(rgb, 0, 255)
 
-def contrast(self, rgb, contrast_var=0.5):
+def contrast( rgb, contrast_var=0.5):
     gs = grayscale(rgb).mean() * np.ones_like(rgb)
     alpha = 2 * np.random.random() * contrast_var 
     alpha += 1 - contrast_var
     rgb = rgb * alpha + (1 - alpha) * gs
     return np.clip(rgb, 0, 255)
 
-def lighting(self, img, lighting_std=0.5):
+def lighting( img, lighting_std=0.5):
     cov = np.cov(img.reshape(-1, 3) / 255.0, rowvar=False)
     eigval, eigvec = np.linalg.eigh(cov)
     noise = np.random.randn(3) * lighting_std
@@ -31,19 +31,19 @@ def lighting(self, img, lighting_std=0.5):
     img += noise
     return np.clip(img, 0, 255)
 
-def horizontal_flip(self, img, y, hflip_prob=0.5):
+def horizontal_flip( img, y, hflip_prob=0.5):
     if np.random.random() < hflip_prob:
         img = img[:, ::-1]
         y[:, [0, 2]] = 1 - y[:, [2, 0]]
     return img, y
 
-def vertical_flip(self, img, y, vflip_prob=0.5):
+def vertical_flip( img, y, vflip_prob=0.5):
     if np.random.random() < vflip_prob:
         img = img[::-1]
         y[:, [1, 3]] = 1 - y[:, [3, 1]]
     return img, y
 
-def random_sized_crop(self, img, targets, crop_area_range=[0.75, 1.0], aspect_ratio_range=[3./4., 4./3.]):
+def random_sized_crop( img, targets, crop_area_range=[0.75, 1.0], aspect_ratio_range=[3./4., 4./3.]):
     img_w = img.shape[1]
     img_h = img.shape[0]
     img_area = img_w * img_h

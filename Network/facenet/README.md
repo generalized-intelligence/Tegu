@@ -7,3 +7,4 @@ Using [facenet](https://github.com/davidsandberg/facenet) and [MTCNN_face_detect
 ## Some issues to know
 
 Before using SSD, make sure you download [the model](https://fanhuaai-my.sharepoint.cn/:u:/g/personal/dongshuo_giai_tech/ETewIvkw58VBgdXzqK5Sl_kB8ascAtH3KDKdkvCTTXykew?e=2mXCmP) , and put it in `model_file` directory.
+
