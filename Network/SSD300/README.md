@@ -44,4 +44,13 @@ for i in range(epoch):
         save_path = "ssd_model{}.h5".format(str(i).zfill(3))
         m.model.save(save_path)
 ```
+6. After training, use Tegu-core to predict image. First create **SSD_Model** .
+```python
+m = SSD_Model(class_count=2)
+```
+7. Start predicting image using the model trained in the first few step.
+```python
+m.predict(img_path=r"dataset/save/path/trainset/xxx.jpg", model_path=r"ssd_modelXXX.h5", anno_path=r"dataset/save/path/car_annotation.serval")
+#[[label:int, class_name:str, score:double, (xmin, ymin), (xmax, ymax)]]
+```
 For more usage, see `Example/ssd_train.py`.

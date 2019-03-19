@@ -49,6 +49,15 @@ for i in range(epoch):
         save_path = "ssd_model{}.h5".format(str(i).zfill(3))
         m.model.save(save_path)
 ```
+6. After training, use Tegu-core to predict image. First create **SSD_Model** .
+```python
+m = SSD_Model(class_count=2)
+```
+7. Start predicting image using the model trained in the first few step.
+```python
+m.predict(img_path=r"dataset/save/path/trainset/xxx.jpg", model_path=r"ssd_modelXXX.h5", anno_path=r"dataset/save/path/car_annotation.serval")
+#[[label:int, class_name:str, score:double, (xmin, ymin), (xmax, ymax)]]
+```
 For more usage, see `Example`.
 
 ## Quick Start
@@ -150,6 +159,15 @@ for i in range(epoch):
     if (i+1)%20==0 or i+1==epoch:
         save_path = "ssd_model{}.h5".format(str(i).zfill(3))
         m.model.save(save_path)
+```
+6. 完成训练以后，使用 Tegu-core 预测图片。首先创建 **SSD_Model** 实例。
+```python
+m = SSD_Model(class_count=2)
+```
+7. 使用前几步训练出的模型预测图片
+```python
+m.predict(img_path=r"dataset/save/path/trainset/xxx.jpg", model_path=r"ssd_modelXXX.h5", anno_path=r"dataset/save/path/car_annotation.serval")
+#[[label:int, class_name:str, score:double, (xmin, ymin), (xmax, ymax)]]
 ```
 查看更多应用，请参见 `Example`。
 
