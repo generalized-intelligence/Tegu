@@ -28,7 +28,7 @@ For deep learning tasks, Tegu uses the **Network_Model** class to manage trainin
 ```
 2. First import the API library of the SSD300 image detection model.
 ```python
-from Network.SSD300.API import SSD_Model, SSD_DataLoaders
+from Network.SSD300.API import SSD_Model, SSD_DataLoader
 ```
 3. Create **SSD_Model** and **SSD_Dataloader** instances.
 ```python
@@ -139,7 +139,7 @@ Please follow CONTRIBUTING.md
 ```
 2. 首先 import SSD300 图像检测模型的 API 库。
 ```python
-from Network.SSD300.API import SSD_Model, SSD_DataLoaders
+from Network.SSD300.API import SSD_Model, SSD_DataLoader
 ```
 3. 创建 **SSD_Model** 和 **SSD_Dataloader** 实例。
 ```python
