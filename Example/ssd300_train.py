@@ -5,7 +5,7 @@ from Network.SSD300.API import SSD_Model, SSD_DataLoader
 def ssd_train():
     epoch = 200    
     m = SSD_Model(class_count=2, lr=0.0004)
-    d = SSD_DataLoader(anno_path=r"annotation/file/path", data_path=r"dataset/path",batch_size=4)
+    d = SSD_DataLoader(data_path=r"dataset/path", anno_path=r"annotation/file/path",batch_size=4)
     m.set_dataset(d)
     for i in range(epoch):
         train_info = m.train()
